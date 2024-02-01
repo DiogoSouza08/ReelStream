@@ -65,36 +65,117 @@
             </div>
         </div>
     </header>
-    
-    <div class=" bg-cover h-screen bg-center w-full bg-no-repeat flex justify-center items-center text-gray-300" style="background-image: url('./src/imagesMain/bg-Avatar2.jpg');">
-       <div class=" w-screen p-8 flex flex-col sm:flex-row sm:text-start text-center justify-center items-center">
-            <div class="h-44 w-48 sm:h-80 sm:w-52 bg-no-repeat bg-cover bg-center rounded-xl" style="background-image: url(./src/imagesMain/card-Avatar.jpg);">
+
+    <div id="default-carousel" class="absolute h-full w-full" data-carousel="slide">
+        <!-- Carousel wrapper -->
+        <div class="absolute h-full w-full overflow-hidden">
+             <!-- Item 1 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                
+    <div class=" bg-cover h-screen  bg-center w-full bg-no-repeat flex justify-center items-center text-gray-300" style="background-image: url('./src/imagesMain/bg-Avatar2.jpg');">
+        <div class=" w-screen p-8 flex flex-col sm:flex-row sm:text-start text-center justify-center items-center">
+             <div class="h-44 w-48 sm:h-80 sm:w-52 bg-no-repeat bg-cover bg-center rounded-xl" style="background-image: url(./src/imagesMain/card-Avatar.jpg);">
+             </div>
+                 <div class="sm:mt-0 mt-2 sm:ml-8 ml-0  items-center text-start sm:items-start sm:w-4/6 w-full flex flex-col px-0 sm:pl-10  ">
+                      <h1 class="sm:text-5xl text-3xl font-semibold text-white">Avatar: O Caminho da Água</h1>
+                      <div class="justify-center w-full md:justify-start flex flex-row  mt-4 items-center gap-1 md:gap-5">
+                         <p class="text-sm sm:text-xl flex">           <svg xmlns="http://www.w3.org/2000/svg" fill="yellow" viewBox="0 0 24 24" stroke-width="none" stroke="none" class="w-5 h-4 sm:w-7 sm:h-7">
+                             <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                           </svg>8.2/10 | 2023 </p>
+                           
+                         <div class="bg-indigo-600 rounded-full text-center p-1 px-3">
+                             <p class="text-sm">Ação/Ficção científica </p>
+                         </div>
+                     </div>
+                     <p class="mt-3 text-justify text-sm ">Jake Sully e Ney'tiri, após formarem uma família, enfrentam uma antiga ameaça em Pandora, levando-os a travar uma guerra contra os humanos para proteger seu lar e seu povo.</p>
+                     <div class="mt-6 gap-2 font-bold flex flex-row">
+                         <button class="bg-white text-black w-36 py-1.5 rounded-full flex-row flex justify-center gap-1 items-center"><svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                             <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                           </svg>
+                           Assistir</button>
+                         <button class="bg-gray-500 text-white w-36 py-1.5 rounded-full bg-opacity-70">+ Minha lista</button>
+                     </div>
+                 </div>
+         </div>
+     </div>
             </div>
-                <div class="sm:mt-0 mt-2 sm:ml-8 ml-0  items-center text-start sm:items-start sm:w-4/6 w-full flex flex-col  ">
-                     <h1 class="sm:text-5xl text-3xl font-semibold">Avatar: O Caminho da Água</h1>
-                     <div class="justify-start w-full md:justify-start flex flex-row  mt-4 items-center gap-1 md:gap-5">
-                        <p class="text-sm sm:text-xl flex">           <svg xmlns="http://www.w3.org/2000/svg" fill="yellow" viewBox="0 0 24 24" stroke-width="none" stroke="none" class="w-5 h-4 sm:w-7 sm:h-7">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-                          </svg>8.2/10 | 2023 </p>
-                          
-                        <div class="bg-indigo-600 rounded-full text-center p-1 px-3">
-                            <p class="text-sm sm:text-lg">Ação/Ficção científica </p>
-                        </div>
-                    </div>
-                    <p class="mt-3 text-justify text-sm">Após formar uma família, Jake Sully e Ney'tiri fazem de tudo para ficarem juntos. No entanto, eles devem sair de casa e explorar as regiões de Pandora quando uma antiga ameaça ressurge, e Jake deve travar uma guerra difícil contra os humanos.</p>
-                    <div class="mt-6 gap-2 font-bold flex flex-row">
-                        <button class="bg-white text-black w-36 py-1.5 rounded-full flex-row flex justify-center gap-1 items-center"><svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
-                          </svg>
-                          Assistir</button>
-                        <button class="bg-gray-500 text-white w-36 py-1.5 rounded-full bg-opacity-70">+ Minha lista</button>
-                    </div>
-                </div>
+            <!-- Item 2 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                
+    <div class="  bg-cover h-screen  bg-center w-full bg-no-repeat flex justify-center items-center text-gray-300" style="background-image: url('./src/imagesMain/bg-oppenheimer.jpg');">
+        <div class=" w-screen p-8 flex flex-col sm:flex-row sm:text-start text-center justify-center items-center">
+             <div class="h-44 w-48 sm:h-80 sm:w-52 bg-no-repeat bg-cover bg-center rounded-xl" style="background-image: url(./src/imagesMain/card-oppenheimer.jpg);">
+             </div>
+                 <div class="sm:mt-0 mt-2 sm:ml-8 ml-0  items-center text-start sm:items-start sm:w-4/6 w-full flex flex-col px-0 sm:pl-10 pl-0 ">
+                      <h1 class="sm:text-5xl text-3xl font-semibold text-white">Oppenheimer - O filme</h1>
+                      <div class="justify-center w-full md:justify-start flex flex-row  mt-4 items-center gap-1 md:gap-5">
+                         <p class="text-sm sm:text-xl flex">           <svg xmlns="http://www.w3.org/2000/svg" fill="yellow" viewBox="0 0 24 24" stroke-width="none" stroke="none" class="w-5 h-4 sm:w-7 sm:h-7">
+                             <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                           </svg>7.4/10 | 2023 </p>
+                           
+                         <div class="bg-indigo-600 rounded-full text-center p-1 px-3">
+                             <p class="text-sm">Suspense/Mistério</p>
+                         </div>
+                     </div>
+                     <p class="mt-3 text-justify text-sm ">O físico J. Robert Oppenheimer trabalha com uma equipe de cientistas durante o Projeto Manhattan, levando ao desenvolvimento da bomba atômica.</p>
+                     <div class="mt-6 gap-2 font-bold flex flex-row">
+                         <button class="bg-white text-black w-36 py-1.5 rounded-full flex-row flex justify-center gap-1 items-center"><svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                             <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                           </svg>
+                           Assistir</button>
+                         <button class="bg-gray-500 text-white w-36 py-1.5 rounded-full bg-opacity-70">+ Minha lista</button>
+                     </div>
+                 </div>
+         </div>
+     </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+               
+
+
+    <div class="  bg-cover h-screen  bg-center w-full bg-no-repeat flex justify-center items-center text-gray-300" style="background-image: url('./src/imagesMain/bg-jhonw4.jpg');">
+        <div class=" w-screen p-8 flex flex-col sm:flex-row sm:text-start text-center justify-center items-center">
+             <div class="h-44 w-48 sm:h-80 sm:w-52 bg-no-repeat bg-cover bg-center rounded-xl" style="background-image: url(./src/imagesMain/card-JhonWick4.jpg);">
+             </div>
+                 <div class="sm:mt-0 mt-2 sm:ml-8 ml-0  items-center text-start sm:items-start sm:w-4/6 w-full flex flex-col  px-0 sm:pl-10">
+                      <h1 class="sm:text-5xl text-3xl font-semibold text-white">John Wick 4: Baba Yaga</h1>
+                      <div class="justify-center w-full md:justify-start flex flex-row  mt-4 items-center gap-1 md:gap-5">
+                         <p class="text-sm sm:text-xl flex">           <svg xmlns="http://www.w3.org/2000/svg" fill="yellow" viewBox="0 0 24 24" stroke-width="none" stroke="none" class="w-5 h-4 sm:w-7 sm:h-7">
+                             <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                           </svg>7.7/10 | 2023 </p>
+                           
+                         <div class="bg-indigo-600 rounded-full text-center p-1 px-3">
+                             <p class="text-sm">Ação/Thriller </p>
+                         </div>
+                     </div>
+                     <p class="mt-3 text-justify text-sm ">John Wick enfrenta um novo inimigo e alianças poderosas em sua busca pela liberdade e vingança contra a Alta Cúpula, em uma batalha onde até mesmo velhos amigos se tornam adversários.</p>
+                     <div class="mt-6 gap-2 font-bold flex flex-row">
+                         <button class="bg-white text-black w-36 py-1.5 rounded-full flex-row flex justify-center gap-1 items-center"><svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                             <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                           </svg>
+                           Assistir</button>
+                         <button class="bg-gray-500 text-white w-36 py-1.5 rounded-full bg-opacity-70">+ Minha lista</button>
+                     </div>
+                 </div>
+         </div>
+     </div>
+     
+            </div>
         </div>
+    
+        
     </div>
+    
+
+    
+
+
 </main>
  
 
 <script src="MenuMobile.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 </body>
 </html>
