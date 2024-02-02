@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-<body style="font-family: 'Poppins', sans-serif;">
+<body style="font-family: 'Poppins', sans-serif;" class="overflow-y-scroll  bg-gray-900">
     <main class="flex flex-col  h-screen ">
     <header class="inset-x-0 top-0 z-50  bg-gray-900">
         <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
@@ -65,6 +65,7 @@
             </div>
         </div>
     </header>
+   
 
     <div id="default-carousel" class="absolute h-full w-full" data-carousel="slide">
         <!-- Carousel wrapper -->
@@ -72,9 +73,9 @@
              <!-- Item 1 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                 
-    <div class=" bg-cover h-screen  bg-center w-full bg-no-repeat flex justify-center items-center text-gray-300" style="background-image: url('./src/imagesMain/bg-Avatar2.jpg');">
+    <div class=" bg-cover py-36 absolute bg-center w-full bg-no-repeat flex  text-gray-300" style="background-image: url('./src/imagesMain/bg-Avatar2.jpg');">
         <div class=" w-screen p-8 flex flex-col sm:flex-row sm:text-start text-center justify-center items-center">
-             <div class="h-44 w-48 sm:h-80 sm:w-52 bg-no-repeat bg-cover bg-center rounded-xl" style="background-image: url(./src/imagesMain/card-Avatar.jpg);">
+             <div class="h-80 w-52 bg-no-repeat sm:mt-0 -mt-20 bg-cover bg-center rounded-xl" style="background-image: url(./src/imagesMain/card-Avatar.jpg);">
              </div>
                  <div class="sm:mt-0 mt-2 sm:ml-8 ml-0  items-center text-start sm:items-start sm:w-4/6 w-full flex flex-col px-0 sm:pl-10  ">
                       <h1 class="sm:text-5xl text-3xl font-semibold text-white">Avatar: O Caminho da Água</h1>
@@ -102,9 +103,9 @@
             <!-- Item 2 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                 
-    <div class="  bg-cover h-screen  bg-center w-full bg-no-repeat flex justify-center items-center text-gray-300" style="background-image: url('./src/imagesMain/bg-oppenheimer.jpg');">
+    <div class="  bg-cover py-36  bg-center w-full bg-no-repeat flex justify-center items-center text-gray-300" style="background-image: url('./src/imagesMain/bg-oppenheimer.jpg');">
         <div class=" w-screen p-8 flex flex-col sm:flex-row sm:text-start text-center justify-center items-center">
-             <div class="h-44 w-48 sm:h-80 sm:w-52 bg-no-repeat bg-cover bg-center rounded-xl" style="background-image: url(./src/imagesMain/card-oppenheimer.jpg);">
+             <div class="h-80 w-52 bg-no-repeat bg-cover bg-center rounded-xl sm:mt-0 -mt-20" style="background-image: url(./src/imagesMain/card-oppenheimer.jpg);">
              </div>
                  <div class="sm:mt-0 mt-2 sm:ml-8 ml-0  items-center text-start sm:items-start sm:w-4/6 w-full flex flex-col px-0 sm:pl-10 pl-0 ">
                       <h1 class="sm:text-5xl text-3xl font-semibold text-white">Oppenheimer - O filme</h1>
@@ -134,9 +135,9 @@
                
 
 
-    <div class="  bg-cover h-screen  bg-center w-full bg-no-repeat flex justify-center items-center text-gray-300" style="background-image: url('./src/imagesMain/bg-jhonw4.jpg');">
+    <div class="  bg-cover py-36  bg-center w-full bg-no-repeat flex justify-center items-center text-gray-300" style="background-image: url('./src/imagesMain/bg-jhonw4.jpg');">
         <div class=" w-screen p-8 flex flex-col sm:flex-row sm:text-start text-center justify-center items-center">
-             <div class="h-44 w-48 sm:h-80 sm:w-52 bg-no-repeat bg-cover bg-center rounded-xl" style="background-image: url(./src/imagesMain/card-JhonWick4.jpg);">
+             <div class="h-80 w-52 bg-no-repeat sm:mt-0 -mt-20 bg-cover bg-center rounded-xl" style="background-image: url(./src/imagesMain/card-JhonWick4.jpg);">
              </div>
                  <div class="sm:mt-0 mt-2 sm:ml-8 ml-0  items-center text-start sm:items-start sm:w-4/6 w-full flex flex-col  px-0 sm:pl-10">
                       <h1 class="sm:text-5xl text-3xl font-semibold text-white">John Wick 4: Baba Yaga</h1>
@@ -168,11 +169,15 @@
     </div>
     
 
-    
+
 
 
 </main>
- 
+<section class="w-full py-56 bg-red-800">
+    <p>dsddsds</p>
+    dsd
+</section>
+
 
 <script src="MenuMobile.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
