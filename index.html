@@ -113,67 +113,85 @@
 
 
  <!-- Top filmes e series da semana  -->
- <div class="w-full justify-start sm:py-5 py-1 flex-col  flex ">
-    <div class=" items-center pr-3 justify-between lg:justify-start  flex">
-        <h1 class="text-white  px-4 md:px-6 lg:px-10 font-medium sm:text-3xl text-xl "> TOP 10 DA SEMANA</h1>
-        <select class="select select-bordered w-auto border-none lg:-ml-4   max-w-xs" >
-            <option>Filmes</option>
-            <option>Series</option>
-          </select>
-    </div>
-        <div class="carousel   carousel-center w-full overflow-auto p-4 lg:px-16 space-x-6 flex ">
-            <div class="carousel-item flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16 ">
-                <p class="opacity-10 text-white" style="font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">1</p>
-              <img src="./src/imagesTop10daSemana/card- a fera@3x.jpg" class="rounded-box h-80 w-52 cursor-pointer z-50 " />
-            </div> 
-            <div class="carousel-item flex justify-center items-center -space-x-16 ">
-                <p class="opacity-10 text-white" style=" font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">2</p>
-              <img src="./src/imagesTop10daSemana/card- a outra zoey@3x.jpg" class="rounded-box h-80 w-52 cursor-pointer z-50" />
-            </div> 
-            <div class="carousel-item  flex justify-center items-center -space-x-16 ">
-                <p class="opacity-10 text-white" style=" font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">3</p>
-              <img src="./src/imagesTop10daSemana/card- megatubarao@3x.jpg" class="rounded-box h-80 w-52 cursor-pointer z-50 " />
-            </div> 
-            <div class="carousel-item  flex justify-center items-center -space-x-16 ">
-                <p class="opacity-10 text-white" style=" font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">4</p>
-              <img src="./src/imagesTop10daSemana/card-wonka@3x.jpg" class="rounded-box h-80 w-52 cursor-pointer z-50 " />
-            </div> 
-            <div class="carousel-item  flex justify-center items-center -space-x-16 ">
-                <p class="opacity-10 text-white" style=" font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">5</p>
-              <img src="./src/imagesTop10daSemana/card-pacto.jpg" class="rounded-box h-80 w-52 cursor-pointer z-50 " />
-            </div> 
-            <div class="carousel-item  flex justify-center items-center -space-x-16 ">
-                <p class="opacity-10 text-white" style=" font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">6</p>
-              <img src="./src/imagesTop10daSemana/card-barbie@3x.jpg" class="rounded-box h-80 w-52 cursor-pointer z-50 " />
-            </div> 
-            <div class="carousel-item  flex justify-center items-center -space-x-16 ">
-                <p class="opacity-10 text-white" style=" font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">7</p>
-              <img src="./src/imagesTop10daSemana/card-besouro azul.jpg" class="rounded-box h-80 w-52 cursor-pointer z-50 " />
-            </div> 
-            <div class="carousel-item  flex justify-center items-center -space-x-16 ">
-                <p class="opacity-10 text-white" style=" font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">8</p>
-              <img src="./src/imagesTop10daSemana/card- A morte sorri.jpg" class="rounded-box h-80 w-52 cursor-pointer z-50 " />
-            </div> 
-             
-            <div class="carousel-item  flex justify-center items-center -space-x-16 ">
-                <p class="opacity-10 text-white" style=" font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">9</p>
-              <img src="./src/imagesTop10daSemana/card-patos.jpg" class="rounded-box h-80 w-52 cursor-pointer z-50 " />
-            </div> 
-             
-            <div class="carousel-item  flex justify-center items-center -space-x-20 ">
-                <p class="opacity-10 text-white" style=" font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">1<span class="-ml-10"></span>0</p>
-              <img src="./src/imagesTop10daSemana/card-black adam@3x.jpg" class="rounded-box h-80 w-52 cursor-pointer z-50 " />
-            </div> 
-             
-           
+
+ <div class="w-full justify-start sm:py-5 py-1 flex-col flex">
+    <div class="items-center pr-3 justify-between lg:justify-start flex">
+        <h1 class="text-white px-4 md:px-6 lg:px-10 font-medium sm:text-3xl text-xl">TOP 10 DA SEMANA</h1>
+        <select id="tipoSelecao" class="select select-bordered w-auto border-none lg:-ml-4 max-w-xs">
+            <option value="1">Filmes</option>
+            <option value="2">Séries</option>
+        </select>
+        <div class="hidden lg:flex">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
         </div>
+    </div>
+    <div id="carousel" class="carousel carousel-center w-full overflow-auto p-4 lg:px-16 space-x-6 flex">
+            <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
+                <p class="opacity-10 text-white" style="font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">1</p>
+                <img class="filme rounded-box h-80 w-52 cursor-pointer z-50" src="./src/imagesTop10daSemana/card- a fera@3x.jpg" />
+                <img class="serie rounded-box h-80 w-52 cursor-pointer z-50 hidden" src="./src/imagesTop10daSemana/card-friends.jpg" />
+            </div>
+            <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
+                <p class="opacity-10 text-white" style="font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">2</p>
+                <img class="filme rounded-box h-80 w-52 cursor-pointer z-50" src="./src/imagesTop10daSemana/card- a outra zoey@3x.jpg" />
+                <img class="serie rounded-box h-80 w-52 cursor-pointer z-50 hidden" src="./src/imagesTop10daSemana/card-GOT.jpg" />
+            </div>
+            <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
+                <p class="opacity-10 text-white" style="font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">3</p>
+                <img class="filme rounded-box h-80 w-52 cursor-pointer z-50" src="./src/imagesTop10daSemana/card- A morte sorri.jpg" />
+                <img class="serie rounded-box h-80 w-52 cursor-pointer z-50 hidden" src="./src/imagesTop10daSemana/card-elite.jpg" />
+            </div>
+            <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
+                <p class="opacity-10 text-white" style="font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">4</p>
+                <img class="filme rounded-box h-80 w-52 cursor-pointer z-50" src="./src/imagesTop10daSemana/card-barbie@3x.jpg" />
+                <img class="serie rounded-box h-80 w-52 cursor-pointer z-50 hidden" src="./src/imagesTop10daSemana/card-round6.jpg" />
+            </div>
+            <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
+                <p class="opacity-10 text-white" style="font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">5</p>
+                <img class="filme rounded-box h-80 w-52 cursor-pointer z-50" src="./src/imagesTop10daSemana/card-besouro azul.jpg" />
+                <img class="serie rounded-box h-80 w-52 cursor-pointer z-50 hidden" src="./src/imagesTop10daSemana/card-wanda vision.jpg" />
+            </div>
+            <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
+                <p class="opacity-10 text-white" style="font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">6</p>
+                <img class="filme rounded-box h-80 w-52 cursor-pointer z-50" src="./src/imagesTop10daSemana/card- megatubarao@3x.jpg" />
+                <img class="serie rounded-box h-80 w-52 cursor-pointer z-50 hidden" src="./src/imagesTop10daSemana/card-teen wolf.jpg" />
+            </div>
+            <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
+                <p class="opacity-10 text-white" style="font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">7</p>
+                <img class="filme rounded-box h-80 w-52 cursor-pointer z-50" src="./src/imagesTop10daSemana/card-pacto.jpg" />
+                <img class="serie rounded-box h-80 w-52 cursor-pointer z-50 hidden" src="./src/imagesTop10daSemana/card-o silo.jpg" />
+            </div>
+            <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
+                <p class="opacity-10 text-white" style="font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">8</p>
+                <img class="filme rounded-box h-80 w-52 cursor-pointer z-50" src="./src/imagesTop10daSemana/card-black adam@3x.jpg" />
+                <img class="serie rounded-box h-80 w-52 cursor-pointer z-50 hidden" src="./src/imagesTop10daSemana/card-sweet tooth.jpg" />
+            </div>
+            <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
+                <p class="opacity-10 text-white" style="font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">9</p>
+                <img class="filme rounded-box h-80 w-52 cursor-pointer z-50" src="./src/imagesTop10daSemana/card-wonka@3x.jpg" />
+                <img class="serie rounded-box h-80 w-52 cursor-pointer z-50 hidden" src="./src/imagesTop10daSemana/card-vis a vis.jpg" />
+            </div>
+            <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
+                <p class="opacity-10 text-white" style="font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">1<span class="-ml-10"></span>0</p>
+                <img class="filme rounded-box h-80 w-52 cursor-pointer z-50" src="./src/imagesTop10daSemana/card-patos.jpg" />
+                <img class="serie rounded-box h-80 w-52 cursor-pointer z-50 hidden" src="./src/imagesTop10daSemana/card-riverdale.jpg" />
+            </div>
+           
 </div>
 
 
 
 
 
+
+
 <script src="MenuMobile.js"></script>
+<script src="Top10filter.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 </body>
 </html>
