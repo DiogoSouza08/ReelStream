@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -114,7 +115,7 @@
 
  <!-- Top filmes e series da semana  -->
 
- <div class="w-full justify-start sm:py-5 py-1 flex-col flex">
+ <section class="w-full justify-start sm:py-5 py-1 flex-col flex">
     <div class="items-center  lg:pr-9 pr-4  lg:justify-between  flex">
         <div class="flex text-center lg:justify-between justify-between w-full sm:w-auto items-center">
         <h1 class="text-white px-4 md:px-6 lg:px-10 font-medium sm:text-3xl text-xl">
@@ -185,8 +186,75 @@
                 <img class="serie rounded-box h-80 w-52 cursor-pointer z-50 hidden" src="./src/imagesTop10daSemana/card-riverdale.jpg" />
             </div>
            
-</div>
+</section>
 
+
+<!-- Mais populares -->
+<section>
+    <div class="items-center pt-9  lg:pr-9 pr-4  lg:justify-between  flex">
+        <div class="flex text-center lg:w-full  lg:justify-between justify-between w-full sm:w-auto items-center">
+        <h1 class="text-white px-4  md:px-6 lg:px-10 font-medium sm:text-3xl text-xl">
+           <span class="text-indigo-600">|</span> POPULARES NA REEL</h1>
+           <div class="hidden lg:flex gap-2">
+            <svg id="prevButtonPopulares" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6 cursor-pointer">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+            </svg>
+            <svg id="nextButtonPopulares" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6 cursor-pointer">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+        </div>
+        </div>        
+    </div>
+    <div id="carouselPopulares" class="carousel  carousel-center w-full overflow-auto p-4 lg:px-20 pl-10 lg:pl-14  space-x-6  flex">
+        <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-3 items-center -space-x-16">
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card- lucifer.jpg"/>
+        </div>
+        <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-Farejando Vingança.jpg" />
+        </div>
+        <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card - diario de vampiro.jpg" />
+        </div>
+        <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-doutor estranho.jpg" />
+        </div>
+        <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
+            <img class="popualar rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-as marvels.jpg" />
+        </div>
+        <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card- tudo no mesmo lugar ao mesmo tempo.jpg" />
+        </div>
+        <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-A cinco passos de você.jpg" />
+        </div>
+        <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-assalto ao banco da espanha.jpg" />
+        </div>
+        <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-até o ultimo homem.jpg" />
+        </div>
+        <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-fale comigo.jpg" />
+        </div>
+        <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-quem matou sara.jpg" />
+        </div>
+        <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-ate os ossos.jpg" />
+        </div>
+        <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-tin-tina.jpg" />
+        </div>
+        <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-wonder-woman.jpg" />
+        </div>
+        <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-stranger things.jpg" />
+        </div>
+        <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-breaking bad.jpg" />
+        </div>
+</section>
 
 
 
@@ -195,6 +263,7 @@
 
 <script src="MenuMobile.js"></script>
 <script src="Top10filter.js"></script>
+<script src="populares.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 </body>
 </html>
