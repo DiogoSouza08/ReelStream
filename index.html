@@ -74,8 +74,8 @@
 
 <main class="flex flex-col w-full  ">    
     <div class=" bg-cover h-full md:h-screen items-start justify-center bg-center w-full bg-no-repeat flex  text-gray-300" style="background-image: url('./src/imagesMain/bg-Avatar2.jpg');">
-        <div class="   flex gap-7 flex-col sm:flex-row items-center justify-center py-10">
-             <div class="h-80 w-52  bg-no-repeat  bg-cover bg-center rounded-xl" style="background-image: url(./src/imagesMain/card-Avatar.jpg);">
+        <div class="   flex gap-7  lg:pt-20 flex-col sm:flex-row items-center justify-center py-10">
+             <div class="h-80 w-52 lg:h-96 lg:w-64  bg-no-repeat  bg-cover bg-center rounded-xl" style="background-image: url(./src/imagesMain/card-Avatar.jpg);">
              </div>
                  <div class="  sm:gap-1 gap-0 items-center text-center md:text-start  sm:items-start sm:w-4/6 w-full flex flex-col sm:px-0 px-5   ">
                       <h1 class="sm:text-5xl text-3xl font-semibold text-white">Avatar: O Caminho da Água</h1>
@@ -115,17 +115,20 @@
  <!-- Top filmes e series da semana  -->
 
  <div class="w-full justify-start sm:py-5 py-1 flex-col flex">
-    <div class="items-center pr-3 justify-between lg:justify-start flex">
-        <h1 class="text-white px-4 md:px-6 lg:px-10 font-medium sm:text-3xl text-xl">TOP 10 DA SEMANA</h1>
+    <div class="items-center  lg:pr-9 pr-4  lg:justify-between  flex">
+        <div class="flex text-center lg:justify-between justify-between w-full sm:w-auto items-center">
+        <h1 class="text-white px-4 md:px-6 lg:px-10 font-medium sm:text-3xl text-xl">
+           <span class="text-indigo-600">|</span> TOP 10 DA SEMANA</h1>
         <select id="tipoSelecao" class="select select-bordered w-auto border-none lg:-ml-4 max-w-xs">
             <option value="1">Filmes</option>
             <option value="2">Séries</option>
         </select>
-        <div class="hidden lg:flex">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        </div>
+        <div class="hidden lg:flex gap-2">
+            <svg id="prevButton" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6 cursor-pointer">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
             </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <svg id="nextButton" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6 cursor-pointer">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
             </svg>
         </div>
