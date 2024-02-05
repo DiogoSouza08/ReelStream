@@ -1,3 +1,4 @@
+//Filtro de seleção(filmes e series)
 document.addEventListener("DOMContentLoaded", function () {
     const tipoSelecao = document.getElementById('tipoSelecao');
     const filmes = document.querySelectorAll('.filme');
@@ -10,12 +11,28 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+
     tipoSelecao.addEventListener('change', function () {
-        // Verifica qual opção foi selecionada
+
         const mostrarFilmes = tipoSelecao.value === '1';
 
 
         toggleVisibilidade(filmes, mostrarFilmes);
         toggleVisibilidade(series, !mostrarFilmes);
+    });
+});
+
+//controle de carossel desktop
+document.addEventListener("DOMContentLoaded", function () {
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
+    const carousel = document.getElementById('carousel');
+
+    prevButton.addEventListener('click', function () {
+        carousel.scrollLeft -= 300; // Quantidade a rolar para a esquerda
+    });
+
+    nextButton.addEventListener('click', function () {
+        carousel.scrollLeft += 300; // Quantidade a rolar para a direita
     });
 });
