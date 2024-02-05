@@ -22,17 +22,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-//controle de carossel desktop
+//controle de carossel desktop Top 10 Filmes e Series
 document.addEventListener("DOMContentLoaded", function () {
     const prevButton = document.getElementById('prevButton');
     const nextButton = document.getElementById('nextButton');
     const carousel = document.getElementById('carousel');
 
     prevButton.addEventListener('click', function () {
-        carousel.scrollLeft -= 300; // Quantidade a rolar para a esquerda
+        carousel.scrollLeft -= 300; // 
     });
 
     nextButton.addEventListener('click', function () {
-        carousel.scrollLeft += 300; // Quantidade a rolar para a direita
+        carousel.scrollLeft += 300; // 
     });
 });
