@@ -23,9 +23,14 @@
                 <a href="#" class="-m-1.5 p-1.5">
                     <p class="text-white text-xl">Reel<span class="text-indigo-500">Stream</span></p>
                 </a>
+                <div class="flex flex-row gap-2">
+                <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6 cursor-pointer lg:hidden ">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                  </svg>   
                 <svg id="OpenMenu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6 lg:hidden cursor-pointer">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
                 </svg>
+                </div>
             </div>
 
             <div class="hidden lg:flex lg:gap-x-12">
@@ -35,13 +40,18 @@
                 <a href="#" class="text-sm font-extralight leading-6 text-gray-300">Kids</a>
             </div>
             <div class="hidden lg:flex lg:flex-1 lg:justify-end items-center">
+                <div class="flex gap-3 justify-center items-center">
+                <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6 cursor-pointer ">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                  </svg>                  
                 <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-extralight text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mr-4">Cadastrar</a>
+                </div>
                 <a href="#" class="text-sm font-extralight leading-6 text-white">Log in <span aria-hidden="true">&rarr;</span></a>
             </div>
 
         </nav>
 
-        <div class="lg:hidden" role="dialog" aria-modal="true">
+        <div class="lg:hidden z-50" role="dialog" aria-modal="true">
             <div class="inset-0 z-50"></div>
             <div class="fixed inset-y-0 transition-transform duration-500 transform -translate-x-full z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10" id="Menu">
                 <div class="flex items-center justify-between text-center">
@@ -95,7 +105,8 @@
                      </div>
                      <p class="mt-3  text-justify text-sm ">Jake Sully e Ney'tiri, após formarem uma família, enfrentam uma antiga ameaça em Pandora, levando-os a travar uma guerra contra os humanos para proteger seu lar e seu povo.</p>
                      <div class="mt-6 gap-2 font-bold flex flex-row">
-                         <button class="bg-white text-black w-36 py-1.5 rounded-full flex-row flex justify-center gap-1 items-center"><svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                         <button class="bg-white text-black w-36 py-1.5 rounded-full flex-row flex justify-center gap-1 items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                              <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
                            </svg>
                            Assistir</button>
@@ -137,53 +148,53 @@
     <div id="carousel" class="carousel carousel-center w-full overflow-auto p-4 lg:px-16 space-x-6 flex">
             <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
                 <p class="opacity-10 text-white" style="font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">1</p>
-                <img class="filme rounded-box h-80 w-52 cursor-pointer z-50" src="./src/imagesTop10daSemana/card- a fera@3x.jpg" />
-                <img class="serie rounded-box h-80 w-52 cursor-pointer z-50 hidden" src="./src/imagesTop10daSemana/card-friends.jpg" />
+                <img class="filme rounded-box h-80 w-52 cursor-pointer z-40" src="./src/imagesTop10daSemana/card- a fera.jpg" />
+                <img class="serie rounded-box h-80 w-52 cursor-pointer z-40 hidden" src="./src/imagesTop10daSemana/card-friends.jpg" />
             </div>
             <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
                 <p class="opacity-10 text-white" style="font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">2</p>
-                <img class="filme rounded-box h-80 w-52 cursor-pointer z-50" src="./src/imagesTop10daSemana/card- a outra zoey@3x.jpg" />
-                <img class="serie rounded-box h-80 w-52 cursor-pointer z-50 hidden" src="./src/imagesTop10daSemana/card-GOT.jpg" />
+                <img class="filme rounded-box h-80 w-52 cursor-pointer z-40" src="./src/imagesTop10daSemana/card- a outra zoey.jpg" />
+                <img class="serie rounded-box h-80 w-52 cursor-pointer z-40 hidden" src="./src/imagesTop10daSemana/card-GOT.jpg" />
             </div>
             <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
                 <p class="opacity-10 text-white" style="font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">3</p>
-                <img class="filme rounded-box h-80 w-52 cursor-pointer z-50" src="./src/imagesTop10daSemana/card- A morte sorri.jpg" />
-                <img class="serie rounded-box h-80 w-52 cursor-pointer z-50 hidden" src="./src/imagesTop10daSemana/card-elite.jpg" />
+                <img class="filme rounded-box h-80 w-52 cursor-pointer z-40" src="./src/imagesTop10daSemana/card- A morte sorri.jpg" />
+                <img class="serie rounded-box h-80 w-52 cursor-pointer z-40 hidden" src="./src/imagesTop10daSemana/card-elite.jpg" />
             </div>
             <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
                 <p class="opacity-10 text-white" style="font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">4</p>
-                <img class="filme rounded-box h-80 w-52 cursor-pointer z-50" src="./src/imagesTop10daSemana/card-barbie@3x.jpg" />
-                <img class="serie rounded-box h-80 w-52 cursor-pointer z-50 hidden" src="./src/imagesTop10daSemana/card-round6.jpg" />
+                <img class="filme rounded-box h-80 w-52 cursor-pointer z-40" src="./src/imagesTop10daSemana/card-barbie.jpg" />
+                <img class="serie rounded-box h-80 w-52 cursor-pointer z-40 hidden" src="./src/imagesTop10daSemana/card-round6.jpg" />
             </div>
             <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
                 <p class="opacity-10 text-white" style="font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">5</p>
-                <img class="filme rounded-box h-80 w-52 cursor-pointer z-50" src="./src/imagesTop10daSemana/card-besouro azul.jpg" />
-                <img class="serie rounded-box h-80 w-52 cursor-pointer z-50 hidden" src="./src/imagesTop10daSemana/card-wanda vision.jpg" />
+                <img class="filme rounded-box h-80 w-52 cursor-pointer z-40" src="./src/imagesTop10daSemana/card-besouro azul.jpg" />
+                <img class="serie rounded-box h-80 w-52 cursor-pointer z-40 hidden" src="./src/imagesTop10daSemana/card-wanda vision.jpg" />
             </div>
             <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
                 <p class="opacity-10 text-white" style="font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">6</p>
-                <img class="filme rounded-box h-80 w-52 cursor-pointer z-50" src="./src/imagesTop10daSemana/card- megatubarao@3x.jpg" />
-                <img class="serie rounded-box h-80 w-52 cursor-pointer z-50 hidden" src="./src/imagesTop10daSemana/card-teen wolf.jpg" />
+                <img class="filme rounded-box h-80 w-52 cursor-pointer z-40" src="./src/imagesTop10daSemana/card- megatubarao.jpg" />
+                <img class="serie rounded-box h-80 w-52 cursor-pointer z-40 hidden" src="./src/imagesTop10daSemana/card-teen wolf.jpg" />
             </div>
             <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
                 <p class="opacity-10 text-white" style="font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">7</p>
-                <img class="filme rounded-box h-80 w-52 cursor-pointer z-50" src="./src/imagesTop10daSemana/card-pacto.jpg" />
-                <img class="serie rounded-box h-80 w-52 cursor-pointer z-50 hidden" src="./src/imagesTop10daSemana/card-o silo.jpg" />
+                <img class="filme rounded-box h-80 w-52 cursor-pointer z-40" src="./src/imagesTop10daSemana/card-pacto.jpg" />
+                <img class="serie rounded-box h-80 w-52 cursor-pointer z-40 hidden" src="./src/imagesTop10daSemana/card-o silo.jpg" />
             </div>
             <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
                 <p class="opacity-10 text-white" style="font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">8</p>
-                <img class="filme rounded-box h-80 w-52 cursor-pointer z-50" src="./src/imagesTop10daSemana/card-black adam@3x.jpg" />
-                <img class="serie rounded-box h-80 w-52 cursor-pointer z-50 hidden" src="./src/imagesTop10daSemana/card-sweet tooth.jpg" />
+                <img class="filme rounded-box h-80 w-52 cursor-pointer z-40" src="./src/imagesTop10daSemana/card-black adam.jpg" />
+                <img class="serie rounded-box h-80 w-52 cursor-pointer z-40 hidden" src="./src/imagesTop10daSemana/card-sweet tooth.jpg" />
             </div>
             <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
                 <p class="opacity-10 text-white" style="font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">9</p>
-                <img class="filme rounded-box h-80 w-52 cursor-pointer z-50" src="./src/imagesTop10daSemana/card-wonka@3x.jpg" />
-                <img class="serie rounded-box h-80 w-52 cursor-pointer z-50 hidden" src="./src/imagesTop10daSemana/card-vis a vis.jpg" />
+                <img class="filme rounded-box h-80 w-52 cursor-pointer z-40" src="./src/imagesTop10daSemana/card-wonka.jpg" />
+                <img class="serie rounded-box h-80 w-52 cursor-pointer z-40 hidden" src="./src/imagesTop10daSemana/card-vis a vis.jpg" />
             </div>
             <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
                 <p class="opacity-10 text-white" style="font-size: 14rem; font-family: 'Swis721 Blk BT', sans-serif;">1<span class="-ml-10"></span>0</p>
-                <img class="filme rounded-box h-80 w-52 cursor-pointer z-50" src="./src/imagesTop10daSemana/card-patos.jpg" />
-                <img class="serie rounded-box h-80 w-52 cursor-pointer z-50 hidden" src="./src/imagesTop10daSemana/card-riverdale.jpg" />
+                <img class="filme rounded-box h-80 w-52 cursor-pointer z-40" src="./src/imagesTop10daSemana/card-patos.jpg" />
+                <img class="serie rounded-box h-80 w-52 cursor-pointer z-40 hidden" src="./src/imagesTop10daSemana/card-riverdale.jpg" />
             </div>
            
 </section>
@@ -207,55 +218,70 @@
     </div>
     <div id="carouselPopulares" class="carousel  carousel-center w-full overflow-auto p-4 lg:px-20 pl-10 lg:pl-14  space-x-6  flex">
         <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-3 items-center -space-x-16">
-            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card- lucifer.jpg"/>
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-40" src="./src/Populares/card- lucifer.jpg"/>
         </div>
         <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
-            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-Farejando Vingança.jpg" />
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-40" src="./src/Populares/card-Farejando Vingança.jpg" />
         </div>
         <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
-            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card - diario de vampiro.jpg" />
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-40" src="./src/Populares/card - diario de vampiro.jpg" />
         </div>
         <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
-            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-doutor estranho.jpg" />
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-40" src="./src/Populares/card-doutor estranho.jpg" />
         </div>
         <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
-            <img class="popualar rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-as marvels.jpg" />
+            <img class="popualar rounded-box h-80 w-52 cursor-pointer z-40" src="./src/Populares/card-as marvels.jpg" />
         </div>
         <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
-            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card- tudo no mesmo lugar ao mesmo tempo.jpg" />
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-40" src="./src/Populares/card- tudo no mesmo lugar ao mesmo tempo.jpg" />
         </div>
         <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
-            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-A cinco passos de você.jpg" />
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-40" src="./src/Populares/card-A cinco passos de você.jpg" />
         </div>
         <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
-            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-assalto ao banco da espanha.jpg" />
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-40" src="./src/Populares/card-assalto ao banco da espanha.jpg" />
         </div>
         <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
-            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-até o ultimo homem.jpg" />
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-40" src="./src/Populares/card-até o ultimo homem.jpg" />
         </div>
         <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
-            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-fale comigo.jpg" />
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-40" src="./src/Populares/card-fale comigo.jpg" />
         </div>
         <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
-            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-quem matou sara.jpg" />
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-40" src="./src/Populares/card-quem matou sara.jpg" />
         </div>
         <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
-            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-ate os ossos.jpg" />
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-40" src="./src/Populares/card-ate os ossos.jpg" />
         </div>
         <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
-            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-tin-tina.jpg" />
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-40" src="./src/Populares/card-tin-tina.jpg" />
         </div>
         <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
-            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-wonder-woman.jpg" />
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-40" src="./src/Populares/card-wonder-woman.jpg" />
         </div>
         <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
-            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-stranger things.jpg" />
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-40" src="./src/Populares/card-stranger things.jpg" />
         </div>
         <div class="carousel-item filmes flex justify-center -ml-5 sm:-ml-2 lg:-ml-11 items-center -space-x-16">
-            <img class="popular rounded-box h-80 w-52 cursor-pointer z-50" src="./src/Populares/card-breaking bad.jpg" />
+            <img class="popular rounded-box h-80 w-52 cursor-pointer z-40" src="./src/Populares/card-breaking bad.jpg" />
         </div>
 </section>
 
+<!-- cards -->
+<section class="grid grid-cols-1 md:grid-cols-2 text-white gap-4 md:px-11 mt-16 px-5   ">
+    <div class="card bg-gray-500 flex bg-opacity-20 py-1.5 md:py-7  text-center">
+        <div class="card-body flex flex-col items-center justify-center">
+            <h2 class="card-title">Seu centro de entretenimento personalizado</h2>
+            <p class="text-gray-400">Filmes, séries e muito mais sob demanda. Recomendações personalizadas, suporte para vários dispositivos e streaming simultâneo tornam tudo mais simples.</p>
+        </div>
+    </div>    
+    <div class="card bg-gray-500 flex bg-opacity-20 py-1.5 md:py-7  text-center">
+        <div class="card-body flex items-center justify-center">
+          <h2 class="card-title">Mergulhe em nossas coleções selecionadas</h2>
+          <p class="text-gray-400">Esteja com muita disposição para séries, filmes ou desenhos, nossa coleção foi cuidadosamente organizada facilita a descoberta de conteúdo.</p>
+        </div>
+    </div>
+</section>
 
 
 
