@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReelStream</title>
+    <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/swis721-blk-bt" rel="stylesheet">
+     <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+</head>
+<body style="font-family: 'Poppins', sans-serif;" class="bg-gray-900">
+    <header class="inset-x-0 top-0 z-50  bg-gray-900">
+        <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+            <div class="flex lg:flex-1 w-full justify-between items-center">
+                <a href="#" class="-m-1.5 p-1.5">
+                    <p class="text-white text-xl">Reel<span class="text-indigo-500">Stream</span></p>
+                </a>
+                <div class="flex flex-row gap-2">
+                <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6 cursor-pointer lg:hidden ">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                  </svg>   
+                <svg id="OpenMenu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6 lg:hidden cursor-pointer">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+                </svg>
+                </div>
+            </div>
+
+            <div class="hidden lg:flex lg:gap-x-12">
+                <a href="#" class="text-sm font-extralight leading-6 text-gray-300">Inicio</a>
+                <a href="#" class="text-sm font-extralight leading-6 text-gray-300">Filmes</a>
+                <a href="#" class="text-sm font-extralight leading-6 text-gray-300">Series</a>
+                <a href="#" class="text-sm font-extralight leading-6 text-gray-300">Kids</a>
+            </div>
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end items-center">
+                <div class="flex gap-3 justify-center items-center">
+                <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6 cursor-pointer ">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                  </svg>                  
+                <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-extralight text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mr-4">Cadastrar</a>
+                </div>
+                <a href="#" class="text-sm font-extralight leading-6 text-white">Log in <span aria-hidden="true">&rarr;</span></a>
+            </div>
+
+        </nav>
+
+        <div class="lg:hidden z-50" role="dialog" aria-modal="true">
+            <div class="inset-0 z-50"></div>
+            <div class="fixed inset-y-0 transition-transform duration-500 transform -translate-x-full z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10" id="Menu">
+                <div class="flex items-center justify-between text-center">
+                    <a href="#" class="-m-1.5 p-1.5">
+                        <p class="text-gray-900 font-bold text-xl">Reel<span class="text-indigo-500">Stream</span></p>
+                    </a>
+                    <button id="CloseMenu" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-900">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="mt-6 flow-root">
+                    <div class="-my-6 divide-y divide-gray-500/10">
+                        <div class="space-y-2 py-6">
+                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Inicio</a>
+                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Series</a>
+                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Filmes</a>
+                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Kids</a>
+                        </div>
+                        <div class="py-6 flex justify-around items-start flex-row mt-24">
+                            <a href="#" class="-mx-3 block rounded-lg  px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in &rarr;</a>
+                            <a href="#" class="rounded-md bg-indigo-600 px-12 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Cadastrar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+            <div class="bg-indigo-600 items-center text-sm w-full  flex gap-3  px-8 py-3">
+                <p>Selecione um genero:</p>
+                <select class="select select-bordered w-56 max-w-xs">
+                    <option>Todos</option>
+                    <option>Ação</option>
+                    <option>Aventura</option>
+                    <option>Romance</option>
+                    <option>Terror</option>
+                    <option>Aventura</option>
+                  </select>
+          
+            </div>
+    </main>
+
+
+<script src="/MenuMobile.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+</body>
