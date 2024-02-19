@@ -18,12 +18,19 @@ function changePage(pageNumber) {
     var currentPage = document.querySelector('.page-' + pageNumber);
     currentPage.style.display = 'grid';
 
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+
     var pageButtons = document.querySelectorAll('.join-item.btn');
     pageButtons.forEach(function(button) {
         button.classList.remove('active');
     });
     document.getElementById('page-' + pageNumber).classList.add('active');
 }
+
 
 
 // Barra de pesquisa
