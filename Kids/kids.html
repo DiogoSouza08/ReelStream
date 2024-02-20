@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReelStream</title>
+    <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/swis721-blk-bt" rel="stylesheet">
+     <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+</head>
+<body style="font-family: 'Poppins', sans-serif;" class="bg-gray-900 h-screen">
+    <header class="inset-x-0 top-0 z-50  bg-gray-900">
+        <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+            <div class="flex lg:flex-1 w-full justify-between items-center">
+                <a href="#" class="-m-1.5 p-1.5">
+                    <p class="text-white text-xl">Reel<span class="text-indigo-500">Stream</span></p>
+                </a>
+                <div class="flex flex-row gap-2">
+  
+                <svg id="OpenMenu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6 lg:hidden cursor-pointer">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+                </svg>
+                </div>
+            </div>
+
+            <div class="hidden lg:flex lg:gap-x-12">
+                <a href="../index.html" class="text-sm font-extralight leading-6 text-gray-300">Inicio</a>
+                <a href="../filmes/filmes.html" class="text-sm font-extralight leading-6 text-gray-300">Filmes</a>
+                <a href="../series/series.html" class="text-sm font-extralight leading-6 text-gray-300">Series</a>
+                <a href="#" class="text-sm font-extralight leading-6 text-gray-300">Kids</a>
+            </div>
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end items-center">
+                <div class="flex gap-3 justify-center items-center">
+                                 
+                <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-extralight text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mr-4">Cadastrar</a>
+                </div>
+                <a href="#" class="text-sm font-extralight leading-6 text-white">Log in <span aria-hidden="true">&rarr;</span></a>
+            </div>
+
+        </nav>
+
+        <div class="lg:hidden z-50" role="dialog" aria-modal="true">
+            <div class="inset-0 z-50"></div>
+            <div class="fixed inset-y-0 transition-transform duration-500 transform -translate-x-full z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10" id="Menu">
+                <div class="flex items-center justify-between text-center">
+                    <a href="#" class="-m-1.5 p-1.5">
+                        <p class="text-gray-900 font-bold text-xl">Reel<span class="text-indigo-500">Stream</span></p>
+                    </a>
+                    <button id="CloseMenu" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-900">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="mt-6 flow-root">
+                    <div class="-my-6 divide-y divide-gray-500/10">
+                        <div class="space-y-2 py-6">
+                            <a href="../index.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Inicio</a>
+                            <a href="../filmes.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Filmes</a>
+                            <a href=".//series.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Series</a>
+                            <a href="../Kids/kids.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Kids</a>
+                        </div>
+                        <div class="py-6 flex justify-around items-start flex-row mt-24">
+                            <a href="#" class="-mx-3 block rounded-lg  px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in &rarr;</a>
+                            <a href="#" class="rounded-md bg-indigo-600 px-12 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Cadastrar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="bg-gray-600  items-center sm:justify-start sm:flex-row flex-col justify-between text-sm w-full flex gap-3 px-8 py-1.5">
+            <div class="flex items-center gap-2">
+                <p class="text-white">Selecione um gênero:</p>
+                <select id="genreSelect" class="select select-bordered text-white font-normal bg-gray-900 w-auto max-w-xs">
+                    <option>Todos</option>
+                    <option>Ação</option>
+                    <option>Aventura</option>
+                    <option>Romance</option>
+                    <option>Terror</option>
+                    <option>Aventura</option>
+                </select>
+            </div>
+            <div class="search-box w-auto bg-white my-1 rounded-lg">
+                <div class="container flex items-center px-5 ">
+                    <input type="text" id="searchInput" placeholder="Buscar filmes" class="flex-grow h-12 border-none text-lg text-gray-900 focus:ring-0">
+                    <button class="bg-transparent ">
+                        <i id="searchIcon" class="fa-solid fa-magnifying-glass w-6 text-gray-600 text-xl cursor-pointer"></i>
+                    </button>
+                </div>
+                <div id="searchResults" class="results max-h-64 overflow-y-scroll">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:hidden z-50" role="dialog" aria-modal="true">
+            <div class="inset-0 z-50"></div>
+            <div class="fixed inset-y-0 transition-transform duration-500 transform -translate-x-full z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10" id="Menu">
+                <div class="flex items-center justify-between text-center">
+                    <a href="#" class="-m-1.5 p-1.5">
+                        <p class="text-gray-900 font-bold text-xl">Reel<span class="text-indigo-500">Stream</span></p>
+                    </a>
+                    <button id="CloseMenu" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-900">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="mt-6 flow-root">
+                    <div class="-my-6 divide-y divide-gray-500/10">
+                        <div class="space-y-2 py-6">
+                            <a href="../index.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Inicio</a>
+                            <a href="../filmes/filmes.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Filmes</a>
+                            <a href="../series/series.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Series</a>
+                            <a href="../kids diversos/kids.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Kids</a>
+                        </div>
+                        <div class="py-6 flex justify-around items-start flex-row mt-24">
+                            <a href="#" class="-mx-3 block rounded-lg  px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in &rarr;</a>
+                            <a href="#" class="rounded-md bg-indigo-600 px-12 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Cadastrar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div id="KidsContainer" class="page-1 bg-gray-900 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-4 px-8 py-6 place-items-center">            
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-cada um na sua casa.jpg" alt="cada um na sua casa"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-o bom dinossauro.jpg" alt="o bom dinossauro"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/kids/card - divertidamente.jpg" alt="divertidamente"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/kids/card - frozen II.jpg " alt="frozen 2"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/kids/card - hotel transilvania.jpg " alt="hotel transilvania"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/kids/card- alvin e os esquilos.jpg " alt="alvin e os esquilos"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/kids/card- bob esponja.jpg " alt="bob esponja"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/kids/card- happy feet.jpg " alt="happy feet"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/kids/card- horton.jpg " alt=" horton"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/kids/card- madagascar.jpg " alt="madagascar"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/kids/card- o bicho vai pegar.jpg " alt="o bicho vai pegar"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-alvin e os esquilos na estrada.jpg" alt="alvin e os esquilos na estrada"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/kids/card- os croods.jpg " alt="os croods"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/kids/card- planeta51.jpg " alt="planeta51"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/kids/card- rio.jpg " alt="rio"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/kids/card- robos.jpg " alt="robos"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/kids/card- shrek.jpg " alt="shrek"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/kids/card-masha e o urso.jpg " alt="masha e o urso"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-walle.jpg" alt="walle"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-garfield.jpg" alt="garfield"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-o espanta tubarões.jpg" alt="o espanta tubaroes"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-mosntros SA.jpg" alt="mosntros SA"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-a casa monstro.jpg" alt="a casa monstro"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-forca G.jpg" alt="força G"></div>
+            
+        </div>
+        
+
+        <div  class="page-2  grid-cols-2 bg-gray-900 md:grid-cols-4  xl:grid-cols-6 gap-4 px-8 py-6 place-items-center hidden">
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-os penguins do papai.jpg" alt="os penguins do papai"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-shark boy e lavagirl.jpg" alt="shark boy e lavagirl"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-diario de um banana.jpg" alt="diario de um banana"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-antZ.jpg" alt="antZ"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-trolls 3.jpg" alt="trolls 3"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-por agua abaixo.jpg" alt="por agua abaixo"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-A Família Mitchell e a Revolta das Máquinas.jpg" alt="A Famolia Mitchell e a Revolta das Maquinas"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-juntos novamente.jpg" alt="juntos novamente"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-familia addams.jpg" alt="familia addams"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-enrolados.jpg" alt="enrolados"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-toy story 4.jpg" alt="toy story 4"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-megamente.jpg" alt="megamente"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-kung fu panda 3.jpg" alt="kung fu panda 3"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-a revolta dos perus.jpg" alt="a revolta dos perus"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-a era do gelo 4.jpg" alt="a era do gelo 4"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-homem aranha no aranha verso.jpg" alt="homem aranha no aranha verso"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-o fantastico Sr Raposo.jpg" alt="o fantastico Sr Raposo"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-sing 2.jpg" alt="sing 2"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-carros 3.jpg" alt="carros 3"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-a noiva do cadaver.jpg" alt="a noiva do cadaver"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-os caras malvados.jpg" alt="os caras malvados"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-lorax.jpg" alt="lorax"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-viva a vida e uma festa.jpg" alt="viva a vida e uma festa"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-pets.jpg" alt="pets"></div>
+            
+    
+
+   
+            
+            
+
+        </div>
+   
+        <div class="page-3 grid-cols-2 bg-gray-900 md:grid-cols-4 xl:grid-cols-6 gap-4 px-8 py-6 place-items-center hidden">
+            <div>
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-desejo sombrio.jpg" alt="Desejo Sombrio">
+            </div>
+            <div>
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-dracula.jpg" alt="Dracula">
+            </div>
+            <div>
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-dahmer.jpg" alt="Dahmer">
+            </div>
+            <div>
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-emily in paris.jpg" alt="Emily in Paris">
+            </div>
+            <div>
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-for life.jpg" alt="For Life">
+            </div>
+            <div>
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-freud.jpg" alt="Freud">
+            </div>
+            <div>
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-iludida.jpg" alt="Iludida">
+            </div>
+            <div>
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-invasor de sonhos.jpg" alt="Invasor de Sonhos">
+            </div>
+            <div>
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-jogo perigoso.jpg" alt="Jogo Perigoso">
+            </div>
+            <div>
+                <img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- impuros.jpg" alt="Impuros">
+            </div>
+            <div>
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-manifest.jpg" alt="Manifest">
+            </div>
+            <div>
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-o clube da meia noite.jpg" alt="O Clube da Meia Noite">
+            </div>
+            <div>
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-o turista.jpg" alt="O Turista">
+            </div>
+            <div>
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-outer range.jpg" alt="Outer Range">
+            </div>
+            <div>
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-reacher.jpg" alt="Reacher">
+            </div>
+            <div>
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-red rose.jpg" alt="Red Rose">
+            </div>
+            <div>
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-sandman.jpg" alt="Sandman">
+            </div>
+            <div>
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-skymed.jpg" alt="Skymed">
+            </div>
+            <div>
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-stargirl.jpg" alt="Stargirl">
+            </div>
+            <div>
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-suspicion.jpg" alt="Suspicion">
+            </div>
+            <div>
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-trying.jpg" alt="Trying">
+            </div>
+            <div>
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-winchesters.jpg" alt="The Winchesters">
+            </div>
+            
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-legados.jpg" alt="legados legacy"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-the rookie.jpg" alt="the rookie"></div>
+        </div>
+        
+   
+        <div class="page-4 bg-gray-900 grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-4 px-8 py-6 place-items-center hidden">
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-titas.jpg" alt="titans"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-cobra kai.jpg" alt="cobra kai"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-perdidos no espaço.jpg" alt="perdidos no espaço"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-succession.jpg" alt="succession"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-jack ryan.jpg" alt="jack ryan"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-mr-inbetween.jpg" alt="mr inbetween"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-the gifted.jpg" alt="the gifted"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-mindhunter.jpg" alt="mind hunter"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-punho de ferro.jpg" alt="punho de ferro"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-ozark.jpg" alt="ozark"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-gossip girl.jpg" alt="gossip girl"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-ghost wars.jpg" alt="ghost wars guerra de fantasmas"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-the deuce.jpg" alt="the deuce"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-lore.jpg" alt="lore"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-agentes da shield.jpg" alt="agentes da shield"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-under the dome.jpg" alt="under the dome"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-originals.jpg" alt="the originals"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-motel bates.jpg" alt="motel bates"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-top boy.jpg" alt="top boy"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-brooklyn nine-nine.jpg" alt="brooklyn nine nine"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-black mirror.jpg" alt="black mirror"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-the killing.jpg" alt="the killing - alem de um crime"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-suits.jpg" alt="suits"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-seal team.jpg" alt="seal team"></div>
+        </div>
+        
+   
+
+
+        
+            <div class="join pb-20 pt-5  flex items-start bg-gray-900 justify-center space-x-2">
+            <button id="page-1" class="join-item btn" onclick="changePage(1); changeActive(1)">1</button>
+            <button id="page-2" class="join-item btn" onclick="changePage(2); changeActive(2)">2</button>
+            <button id="page-3" class="join-item btn" onclick="changePage(3); changeActive(3)">3</button>
+            <button id="page-4" class="join-item btn" onclick="changePage(4); changeActive(4)">4</button>
+            </div>
+        
+            
+            
+            
+    </main>
+    
+    <footer>
+        <div class=" bg-gray-900 border-t sm:px-12 p-5 sm:p-0 gap-7 sm:gap-0 sm:py-10 text-center sm:text-start py-4 flex-col sm:flex-row border-gray-300 flex justify-between">
+            <div class="w-auto text-white sm:w-96 flex flex-col  gap-3">
+                <p class="text-2xl font-bold">Reel<span class="text-indigo-500">Stream</span></p>
+                    <p class="text-sm ">
+                        ReelStram é onde suas séries e filmes favoritos se reúnem sob o mesmo teto. Aproveite a conveniência da descoberta contínua de conteúdo e desfrute de entretenimento sem fim como nunca antes.
+                    </p>
+            </div>
+            <div class="flex sm:gap-28  gap-6 justify-center text-white">
+                <div class="flex flex-col">
+                    <p class="font-semibold">Assista</p>
+                    <a href="./index.html" class="text-sm font-extralight leading-6">Inicio</a>
+                    <a href="./filmes/filmes.html" class="text-sm font-extralight leading-6">Filmes</a>
+                    <a href="./series/series.html" class="text-sm font-extralight leading-6">Series</a>
+                    <a href="#" class="text-sm font-extralight leading-6">Kids</a>
+                </div>
+                <div class="flex flex-col">
+                    <p class="font-semibold">Nossa empresa</p>
+                    <a href="#" class="text-sm font-extralight leading-6">Sobre nós</a>
+                    <a href="#" class="text-sm font-extralight leading-6">Nossos negócios</a>
+                    <a href="#" class="text-sm font-extralight leading-6">Contatos</a>
+                    <a href="#" class="text-sm font-extralight leading-6">Blog</a>
+                    <a href="#" class="text-sm font-extralight leading-6">Trabalhe conosco</a>
+                    <a href="#" class="text-sm font-extralight leading-6">FAQ</a>
+                </div>
+                <div class="flex flex-col">
+                    <p class="font-semibold">Redes Sociais</p>
+                    <a href="#" class="text-sm font-extralight leading-6">Instagram</a>
+                    <a href="#" class="text-sm font-extralight leading-6">Facebook</a>
+                    <a href="#" class="text-sm font-extralight leading-6">Linkedin</a>
+                    <a href="#" class="text-sm font-extralight leading-6">Twitter</a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t bg-gray-900 sm:px-12 text-white text-sm sm:py-10 p-8 sm:p-0 gap-5 border-gray-300 flex sm:flex-row flex-col justify-between">
+            <div>
+                <p class="text-center">Copyright © 2024 ReelStream. Todos os direitos reservados.</p>
+            </div>
+            <div class="flex  flex-row gap-9">
+                <div>Política de privacidade</div>
+                <div>Termos de serviço</div>
+                <div>Cookies</div>
+            </div>
+        </div>    
+    
+    
+    </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+<script src="https://kit.fontawesome.com/a30844655f.js" crossorigin="anonymous"></script>
+<script src="../MenuMobile.js"></script>
+<script src="kidsMoovies.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+</body>
