@@ -21,7 +21,7 @@
     <header class="inset-x-0 top-0 z-50  bg-gray-900">
         <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div class="flex lg:flex-1 w-full justify-between items-center">
-                <a href="#" class="-m-1.5 p-1.5">
+                <a href="../index.html" class="-m-1.5 p-1.5">
                     <p class="text-white text-xl">Reel<span class="text-indigo-500">Stream</span></p>
                 </a>
                 <div class="flex flex-row gap-2">
@@ -87,13 +87,17 @@
                     <option>Todos</option>
                     <option>Ação</option>
                     <option>Aventura</option>
+                    <option>Suspense</option>
                     <option>Romance</option>
                     <option>Terror</option>
+                    <option>Fantasia</option>
+                    <option>Comédia</option>
                     <option>Aventura</option>
+                    <option>Ficção</option>
                 </select>
             </div>
             <div class="search-box w-auto bg-white my-1 rounded-lg">
-                <div class="container flex items-center px-2 ">
+                <div class="container flex items-center px-5 ">
                     <input type="text" id="searchInput" placeholder="Buscar filmes" class="flex-grow h-12 border-none text-lg text-gray-900 focus:ring-0">
                     <button class="bg-transparent ">
                         <i id="searchIcon" class="fa-solid fa-magnifying-glass w-6 text-gray-600 text-xl cursor-pointer"></i>
@@ -135,31 +139,31 @@
             </div>
         </div>
     
-        <div id="moviesContainer" class="page-1 bg-gray-900 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-4 px-8 py-6 place-items-center">            
-                <div><img class="rounded-lg cursor-pointer" src="../src/imagesMain/card-Avatar.jpg" alt="avatar - o caminho da agua"></div>
-                <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card -nos.jpg" alt="nos"></div>
-                <div><img class="rounded-lg cursor-pointer" src="../src/imagesMain/card-JhonWick4.jpg" alt="jhon wick 4: "></div>
-                <div ><img class="rounded-lg cursor-pointer" src="../src/imagesMain/card-oppenheimer.jpg" alt="oppenheimer"></div>
-                <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card- a fera.jpg" alt="a fera"></div>
-                <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card- A morte sorri.jpg" alt="a morte sorri"></div>
-                <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card- a outra zoey.jpg" alt="a outra zoey"></div>
-                <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card- megatubarao.jpg" alt="megatubarao"></div>
-                <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-barbie.jpg" alt="barbie"></div>
-                <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-besouro azul.jpg" alt="Besouro Azul"></div>
-                <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-black adam.jpg" alt="black adam"></div>
-                <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-pacto.jpg" alt="o pacto"></div>
-                <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-wonka.jpg" alt="wonka"></div>
-                <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - a bela e a fera.jpg" alt="a bela e a fera"></div>
-                <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - a dama e o vagabundo.jpg" alt="a dama e o vagabundo"></div>
-                <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - a pequena sereia.jpg" alt="a pequena sereia"></div>
-                <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - aladdin.jpg" alt="aladdin"></div>
-                <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - alice atraves do espelho.jpg" alt="alice atraves do espelho"></div>
-                <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card - toc toc toc.jpg" alt="toc toc toc ecos do alem"></div>
-                <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card -o culto secreto.jpg" alt="o culto secreto"></div>
-                <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-tenet.jpg" alt="tenet"></div>
-                <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-2067.jpg" alt="2067"></div>
-                <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-o homem invisivel.jpg" alt="o homem invisivel"></div>
-                <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-bloodshot.jpg" alt="bloodshot"></div>
+        <div  id="moviesContainer" class="page-1 bg-gray-900 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-4 px-8 py-6 place-items-center">            
+                <div class="ficção"><img class="rounded-lg cursor-pointer" src="../src/imagesMain/card-Avatar.jpg" alt="avatar - o caminho da agua"></div>
+                <div class="terror"><img class="rounded-lg cursor-pointer" src="../src/Terror/card -nos.jpg" alt="nos"></div>
+                <div class="ação"><img class="rounded-lg cursor-pointer" src="../src/imagesMain/card-JhonWick4.jpg" alt="jhon wick 4: "></div>
+                <div class="suspense"><img class="rounded-lg cursor-pointer" src="../src/imagesMain/card-oppenheimer.jpg" alt="oppenheimer"></div>
+                <div class="terror ação"><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card- a fera.jpg" alt="a fera"></div>
+                <div class="terror suspense"><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card- A morte sorri.jpg" alt="a morte sorri"></div>
+                <div class="romance comédia"><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card- a outra zoey.jpg" alt="a outra zoey"></div>
+                <div class="ação ficção"><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card- megatubarao.jpg" alt="megatubarao"></div>
+                <div class="comédia"><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-barbie.jpg" alt="barbie"></div>
+                <div class="ação ficção"><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-besouro azul.jpg" alt="Besouro Azul"></div>
+                <div class="ação aventura"><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-black adam.jpg" alt="black adam"></div>
+                <div class="ação"><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-pacto.jpg" alt="o pacto"></div>
+                <div class="fantasia"><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-wonka.jpg" alt="wonka"></div>
+                <div class="fantasia"><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - a bela e a fera.jpg" alt="a bela e a fera"></div>
+                <div class="romance"><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - a dama e o vagabundo.jpg" alt="a dama e o vagabundo"></div>
+                <div class="fantasia"><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - a pequena sereia.jpg" alt="a pequena sereia"></div>
+                <div class="fantasia"><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - aladdin.jpg" alt="aladdin"></div>
+                <div class="fantasia aventura"><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - alice atraves do espelho.jpg" alt="alice atraves do espelho"></div>
+                <div class="terror suspense"><img class="rounded-lg cursor-pointer" src="../src/Terror/card - toc toc toc.jpg" alt="toc toc toc ecos do alem"></div>
+                <div class="terror"><img class="rounded-lg cursor-pointer" src="../src/Terror/card -o culto secreto.jpg" alt="o culto secreto"></div>
+                <div class="ação ficção"><img class="rounded-lg cursor-pointer" src="filmes diversos/card-tenet.jpg" alt="tenet"></div>
+                <div class="ficção"><img class="rounded-lg cursor-pointer" src="filmes diversos/card-2067.jpg" alt="2067"></div>
+                <div class="terror ficção"><img class="rounded-lg cursor-pointer" src="filmes diversos/card-o homem invisivel.jpg" alt="o homem invisivel"></div>
+                <div class="ação ficção"><img class="rounded-lg cursor-pointer" src="filmes diversos/card-bloodshot.jpg" alt="bloodshot"></div>
         </div>
 
         <div  class="page-2  grid-cols-2 bg-gray-900 md:grid-cols-4  xl:grid-cols-6 gap-4 px-8 py-6 place-items-center hidden">
