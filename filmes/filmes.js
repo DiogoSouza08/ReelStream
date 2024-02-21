@@ -122,3 +122,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const genreSelect = document.getElementById('genreSelect');
+        const moviesContainer = document.getElementById('moviesContainer');
+        const allMovies = moviesContainer.querySelectorAll('div');
+
+        genreSelect.addEventListener('change', function() {
+            const selectedGenre = genreSelect.value;
+            allMovies.forEach(function(movie) {
+                if (selectedGenre === 'Todos') {
+                    movie.style.display = 'block';
+                } else if (movie.classList.contains(selectedGenre.toLowerCase())) {
+                    movie.style.display = 'block';
+                } else {
+                    movie.style.display = 'none';
+                }
+            });
+        });
+    });
