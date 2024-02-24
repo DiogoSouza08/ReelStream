@@ -83,17 +83,17 @@
         <div class="bg-gray-600  items-center sm:justify-start sm:flex-row flex-col justify-between text-sm w-full flex gap-3 px-8 py-1.5">
             <div class="flex items-center gap-2">
                 <p class="text-white">Selecione um gênero:</p>
-                <select id="genreSelect" class="select select-bordered text-white font-normal bg-gray-900 w-auto max-w-xs">
-                    <option>Todos</option>
-                    <option>Ação</option>
-                    <option>Aventura</option>
-                    <option>Suspense</option>
-                    <option>Romance</option>
-                    <option>Terror</option>
-                    <option>Fantasia</option>
-                    <option>Comédia</option>
-                    <option>Aventura</option>
-                    <option>Ficção</option>
+                <select id="generoDropdown" onchange="filtrarPorGenero()" class="select select-bordered text-white font-normal bg-gray-900 w-auto max-w-xs">
+                    <option value="">Todos</option>
+                    <option value="ação">Ação</option>
+                    <option value="suspense">Suspense</option>
+                    <option value="terror">Terror</option>
+                    <option value="romance">Romance</option>
+                    <option value="comédia">Comédia</option>
+                    <option value="ficção">Ficção</option>
+                    <option value="aventura">Aventura</option>
+                    <option value="fantasia">Fantasia</option>
+                    <option value="superHero">Super-herói</option>
                 </select>
             </div>
             <div class="search-box w-auto bg-white my-1 rounded-lg">
@@ -138,116 +138,118 @@
                 </div>
             </div>
         </div>
-    
-        <div  id="moviesContainer" class="page-1 bg-gray-900 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-4 px-8 py-6 place-items-center">            
-                <div class="ficção"><img class="rounded-lg cursor-pointer" src="../src/imagesMain/card-Avatar.jpg" alt="avatar - o caminho da agua"></div>
-                <div class="terror"><img class="rounded-lg cursor-pointer" src="../src/Terror/card -nos.jpg" alt="nos"></div>
-                <div class="ação"><img class="rounded-lg cursor-pointer" src="../src/imagesMain/card-JhonWick4.jpg" alt="jhon wick 4: "></div>
-                <div class="suspense"><img class="rounded-lg cursor-pointer" src="../src/imagesMain/card-oppenheimer.jpg" alt="oppenheimer"></div>
-                <div class="terror ação"><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card- a fera.jpg" alt="a fera"></div>
-                <div class="terror suspense"><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card- A morte sorri.jpg" alt="a morte sorri"></div>
-                <div class="romance comédia"><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card- a outra zoey.jpg" alt="a outra zoey"></div>
-                <div class="ação ficção"><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card- megatubarao.jpg" alt="megatubarao"></div>
-                <div class="comédia"><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-barbie.jpg" alt="barbie"></div>
-                <div class="ação ficção"><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-besouro azul.jpg" alt="Besouro Azul"></div>
-                <div class="ação aventura"><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-black adam.jpg" alt="black adam"></div>
-                <div class="ação"><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-pacto.jpg" alt="o pacto"></div>
-                <div class="fantasia"><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-wonka.jpg" alt="wonka"></div>
-                <div class="fantasia"><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - a bela e a fera.jpg" alt="a bela e a fera"></div>
-                <div class="romance"><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - a dama e o vagabundo.jpg" alt="a dama e o vagabundo"></div>
-                <div class="fantasia"><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - a pequena sereia.jpg" alt="a pequena sereia"></div>
-                <div class="fantasia"><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - aladdin.jpg" alt="aladdin"></div>
-                <div class="fantasia aventura"><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - alice atraves do espelho.jpg" alt="alice atraves do espelho"></div>
-                <div class="terror suspense"><img class="rounded-lg cursor-pointer" src="../src/Terror/card - toc toc toc.jpg" alt="toc toc toc ecos do alem"></div>
-                <div class="terror"><img class="rounded-lg cursor-pointer" src="../src/Terror/card -o culto secreto.jpg" alt="o culto secreto"></div>
-                <div class="ação ficção"><img class="rounded-lg cursor-pointer" src="filmes diversos/card-tenet.jpg" alt="tenet"></div>
-                <div class="ficção"><img class="rounded-lg cursor-pointer" src="filmes diversos/card-2067.jpg" alt="2067"></div>
-                <div class="terror ficção"><img class="rounded-lg cursor-pointer" src="filmes diversos/card-o homem invisivel.jpg" alt="o homem invisivel"></div>
-                <div class="ação ficção"><img class="rounded-lg cursor-pointer" src="filmes diversos/card-bloodshot.jpg" alt="bloodshot"></div>
+  
+        <div  id="moviesContainer" class="page-1 bg-gray-900 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-4 px-8 py-6 place-items-center">   
+            <div><img class="rounded-lg cursor-pointer" src="../src/imagesMain/card-Avatar.jpg" alt="ficção - avatar - o caminho da agua"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card -nos.jpg" alt="terror - nos"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/imagesMain/card-JhonWick4.jpg" alt="ação - jhon wick 4"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/imagesMain/card-oppenheimer.jpg" alt="suspense - oppenheimer"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card- a fera.jpg" alt="terror - a fera"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card- A morte sorri.jpg" alt="terror  - a morte sorri"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card- a outra zoey.jpg" alt=" comédia - a outra zoey"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card- megatubarao.jpg" alt="ação  - megatubarao"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-barbie.jpg" alt="comédia - barbie"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-besouro azul.jpg" alt="superHero  - Besouro Azul"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-black adam.jpg" alt="superHero  - black adam"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-pacto.jpg" alt="ação - o pacto"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-wonka.jpg" alt="fantasia - wonka"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - a bela e a fera.jpg" alt="fantasia - a bela e a fera"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - a dama e o vagabundo.jpg" alt="romance - a dama e o vagabundo"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - a pequena sereia.jpg" alt="fantasia - a pequena sereia"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - aladdin.jpg" alt="fantasia - aladdin"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - alice atraves do espelho.jpg" alt="fantasia  - alice atraves do espelho"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card - toc toc toc.jpg" alt="terror  - toc toc toc ecos do alem"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card -o culto secreto.jpg" alt="terror - o culto secreto"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-tenet.jpg" alt="ficção  - tenet"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-2067.jpg" alt="ficção - 2067"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-o homem invisivel.jpg" alt="terror  - o homem invisivel"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-bloodshot.jpg" alt="superHero  - bloodshot"></div>
+            
+                    
         </div>
 
         <div  class="page-2  grid-cols-2 bg-gray-900 md:grid-cols-4  xl:grid-cols-6 gap-4 px-8 py-6 place-items-center hidden">
-            <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - cinderela.jpg" alt="cinderela"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - dumbo.jpg" alt="dumbo"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - malevola.jpg" alt="malevola"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - meu amigo o dragao.jpg" alt="meu amigo o dragao"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - mogli.jpg" alt="mogli"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - mulan.jpg" alt="mulan"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - o rei leão.jpg" alt="o rei leao"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - peter pan.jpg" alt="peter pan"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - pinoquio.jpg" alt="pinoquio"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - pokemon detive pikachu.jpg" alt="pokemon detive pikachu"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-wonder.jpg" alt="mulher maravilha"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-tin-tina.jpg" alt="tin tina"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-Farejando Vingança.jpg" alt="Farejando Vingança"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-fale comigo.jpg" alt="fale comigo"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-doutor estranho.jpg" alt="doutor estranho"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-até o ultimo homem.jpg" alt="até o ultimo homem"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-ate os ossos.jpg" alt=""></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-assalto ao banco da espanha.jpg" alt="assalto ao banco da espanha"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card - ninguem vai te salvar.jpg" alt="ninguem vai te salvar"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card - o ritual.jpg" alt=" o ritual"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../filmes/filmes diversos/card-GaurdiõesdasGalaxias-V3.jpg" alt="guardiões das galaxias"></div>
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-aves de rapina.jpg" alt="aves de rapina"></div>
-            <div ><img class="rounded-lg cursor-pointer" src="filmes diversos/card-alone.jpg" alt="alone"></div>
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-interestelar.jpg" alt="interestelar"></div>
+            <div class="ficção"><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - cinderela.jpg" alt="fantasia - cinderela"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - dumbo.jpg" alt="fantasia - dumbo"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - malevola.jpg" alt="fantasia - malevola"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - meu amigo o dragao.jpg" alt="fantasia - meu amigo o dragao"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - mogli.jpg" alt="fantasia - mogli"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - mulan.jpg" alt="aventura - mulan"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - o rei leão.jpg" alt="fantasia - o rei leao"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - peter pan.jpg" alt="aventura - peter pan"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - pinoquio.jpg" alt="fantasia - pinoquio"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Live-Actions/card - pokemon detive pikachu.jpg" alt="fantasia -  pokemon detive pikachu"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-wonder.jpg" alt="superHero - mulher maravilha"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-tin-tina.jpg" alt="terror - tin tina"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-Farejando Vingança.jpg" alt="ação - Farejando Vingança"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-fale comigo.jpg" alt="terror - fale comigo"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-doutor estranho.jpg" alt="superHero - doutor estranho"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-até o ultimo homem.jpg" alt="ação - até o ultimo homem"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-ate os ossos.jpg" alt="romance - ate os ossos"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-assalto ao banco da espanha.jpg" alt="ação - assalto ao banco da espanha"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card - ninguem vai te salvar.jpg" alt="terror - ninguem vai te salvar"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card - o ritual.jpg" alt="ação -  o ritual"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../filmes/filmes diversos/card-GaurdiõesdasGalaxias-V3.jpg" alt="superHero - guardiões das galaxias"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-aves de rapina.jpg" alt="superHero - aves de rapina"></div>
+            <div ><img class="rounded-lg cursor-pointer" src="filmes diversos/card-alone.jpg" alt="terror - alone"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-interestelar.jpg" alt="ficção - interestelar"></div>
  
 
         </div>
    
         <div class="page-3 grid-cols-2 bg-gray-900 md:grid-cols-4 xl:grid-cols-6 gap-4 px-8 py-6 place-items-center hidden">
-            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-as marvels.jpg" alt="As Marvels"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-A cinco passos de você.jpg" alt="A Cinco Passos de Você"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card- tudo no mesmo lugar ao mesmo tempo.jpg" alt="Tudo no Mesmo Lugar ao Mesmo Tempo"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - 007 sem tempo para morrer.jpg" alt="007 Sem Tempo para Morrer"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - duna_2.jpg" alt="Duna"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - free guy.jpg" alt="Free Guy"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - ghostbusters.jpg" alt="Ghostbusters"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - kings man a origem.jpg" alt="Kingsman: A Origem"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - matrix.jpg" alt="Matrix"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - monster hunter.jpg" alt="Monster Hunter"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - nope.jpg" alt="Nope"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - viuva negra.jpg" alt="Viuva Negra"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - triangulo da tristeza.jpg" alt="Triangulo da Tristeza"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - suicide squad.jpg" alt="Esquadrão Suicida"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - spider man no way home.jpg" alt="Homem-Aranha: Sem Volta para Casa"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - soul.jpg" alt="Soul"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - shang chi.jpg" alt="Shang-Chi e a Lenda dos Dez Anéis"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - Rye Lane - Um Amor Inesperado.jpg" alt="Rye Lane - Um Amor Inesperado"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - orfã 2.jpg" alt="A orfa 2"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card - a entidade II.jpg" alt="A Entidade II"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card - A Morte do Demônio.jpg" alt="A Morte do Demônio"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card - corra.jpg" alt="Corra!"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card - hereditario.jpg" alt="Hereditario"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card - mama.jpg" alt="Mama"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-as marvels.jpg" alt="ação - As Marvels"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-A cinco passos de você.jpg" alt="romance - A Cinco Passos de Você"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card- tudo no mesmo lugar ao mesmo tempo.jpg" alt="ficção - Tudo no Mesmo Lugar ao Mesmo Tempo"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - 007 sem tempo para morrer.jpg" alt="ação - 007 Sem Tempo para Morrer"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - duna_2.jpg" alt="ficção - Duna"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - free guy.jpg" alt="comédia - Free Guy"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - ghostbusters.jpg" alt="comédia - Ghostbusters"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - kings man a origem.jpg" alt="ação - Kingsman: A Origem"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - matrix.jpg" alt="ficção - Matrix"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - monster hunter.jpg" alt="aventura -  Hunter"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - nope.jpg" alt="terror - Nope"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - viuva negra.jpg" alt="superHero - Viuva Negra"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - triangulo da tristeza.jpg" alt="comédia -  da Tristeza"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - suicide squad.jpg" alt="superHero - Esquadrão Suicida"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - spider man no way home.jpg" alt="superHero - Homem-Aranha: Sem Volta para Casa"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - soul.jpg" alt="aventura - Soul"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - shang chi.jpg" alt="superHero - Shang-Chi e a Lenda dos Dez Anéis"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - Rye Lane - Um Amor Inesperado.jpg" alt="romance - Rye Lane um Amor Inesperado"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Recem-lançados/card - orfã 2.jpg" alt="terror - A orfa 2"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card - a entidade II.jpg" alt="terror - A Entidade II"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card - A Morte do Demônio.jpg" alt="terror - A Morte do Demônio"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card - corra.jpg" alt="terror - Corra!"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card - hereditario.jpg" alt="terror - Hereditario"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card - mama.jpg" alt="terror - Mama"></div>
         </div>
         
    
         <div class="page-4 bg-gray-900 grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-4 px-8 py-6 place-items-center hidden">
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-assalto a 13 dp.jpg" alt="assalto a 13 dp"></div>
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-greyhound.jpg" alt="Greyhound"></div>
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-o livro de eli.jpg" alt="O Livro de Eli"></div>
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-thor.jpg" alt="Thor"></div>
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-deadpool.jpg" alt="Deadpool"></div>
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-the batman.jpg" alt="The Batman"></div>
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-monsters man.jpg" alt="Monsters Man"></div>
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-ouija.jpg" alt="Ouija"></div>
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-a culpa e das estrelas.jpg" alt="A Culpa é das Estrelas"></div>
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-doce vingança 2.jpg" alt="Doce Vingança 2"></div>
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-curtindo a vida adoidado.jpg" alt="curtindo a vida adoidado"></div>
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-zona de conforto.jpg" alt="Zona de Conforto"></div>
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-a ilha do medo.jpg" alt="A Ilha do Medo"></div>
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-tropa de elite 2.jpg" alt="Tropa de Elite 2"></div>
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-lucy.jpg" alt="Lucy"></div>
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-logan.jpg" alt="Logan"></div>
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-kong.jpg" alt="Kong"></div>
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-pai em dose dupla.jpg" alt="Pai em Dose Dupla"></div>
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-a barraca do beijo.jpg" alt="A Barraca do Beijo 3"></div>
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-minha mae e um peça 2.jpg" alt="Minha Mãe é uma Peça 2"></div>
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-as branquelas.jpg" alt="As Branquelas"></div>
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-o lobo de wall street.jpg" alt="O Lobo de Wall Street"></div>
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-tubarao.jpg" alt="Tubarão"></div>
-            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-marley e eu.jpg" alt="Marley e Eu"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-assalto a 13 dp.jpg" alt="ação - assalto a 13 dp"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-greyhound.jpg" alt="ação - Greyhound"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-o livro de eli.jpg" alt="ficção - O Livro de Eli"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-thor.jpg" alt="superHero - Thor"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-deadpool.jpg" alt="superHero - Deadpool"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-the batman.jpg" alt="superHero - The Batman"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-monsters man.jpg" alt="ficção - Monsters Man"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-ouija.jpg" alt="terror - Ouija"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-a culpa e das estrelas.jpg" alt="romance - A Culpa é das Estrelas"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-doce vingança 2.jpg" alt="terror - Doce Vingança 2"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-curtindo a vida adoidado.jpg" alt="comédia - curtindo a vida adoidado"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-zona de conforto.jpg" alt="ação - Zona de Conforto"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-a ilha do medo.jpg" alt="suspense - A Ilha do Medo"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-tropa de elite 2.jpg" alt="ação - Tropa de Elite 2"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-lucy.jpg" alt="ficção -  Lucy"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-logan.jpg" alt="superHero - Logan"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-kong.jpg" alt="Aventura - Kong"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-pai em dose dupla.jpg" alt="comédia -  Pai em Dose Dupla"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-a barraca do beijo.jpg" alt="romance - A Barraca do Beijo 3"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-minha mae e um peça 2.jpg" alt="comédia - Minha Mãe é uma Peça 2"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-as branquelas.jpg" alt="comédia - As Branquelas"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-o lobo de wall street.jpg" alt="comédia - O Lobo de Wall Street"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-tubarao.jpg" alt="aventura - Tubarão"></div>
+            <div><img class="rounded-lg cursor-pointer" src="filmes diversos/card-marley e eu.jpg" alt="comédia - Marley e Eu"></div>
         </div>
         
    
