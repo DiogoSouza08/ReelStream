@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchIcon = document.getElementById("searchIcon");
     const moviesContainer = document.getElementById("moviesContainer");
     const moviesPages = document.querySelectorAll("[class^='page-']");
-    const generoDropdown = document.getElementById("generoDropdown"); // Adicionado
+    const generoDropdown = document.getElementById("generoDropdown");
 
     let originalMovies = [];
     let searchResults = [];
@@ -51,9 +51,16 @@ document.addEventListener("DOMContentLoaded", function () {
     function restoreOriginalMovies() {
         moviesContainer.innerHTML = "";
         originalMovies.forEach(movie => {
-            moviesContainer.appendChild(movie.parentNode);
+            const moviePage = movie.closest('.movie-page'); // Encontrar a página pai do filme
+            const pageNumber = moviePage.dataset.page; // Obter o número da página do atributo data-page
+            if (pageNumber === currentPage) { // Verificar se é a página atual
+                moviesContainer.appendChild(movie.parentNode);
+            }
         });
+
+        
     }
+    
 
     function filterMovies(query) {
         const lowerCaseQuery = query.toLowerCase();
@@ -64,7 +71,11 @@ document.addEventListener("DOMContentLoaded", function () {
         displaySearchResults();
     }
 
-    function filterMoviesByGenero(genero) { // Adicionado
+    function filterMoviesByGenero(genero) {
+        if (genero === "todos") {
+            location.reload(); // Recarrega a página se "todos" for selecionado
+            return;
+        }
         searchResults = originalMovies.filter(movie => {
             const movieGenero = movie.alt.toLowerCase().split('-')[0].trim(); // Obtém o gênero do filme
             return movieGenero === genero;
@@ -88,21 +99,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function handleSearch() {
         const query = searchInput.value.trim();
-        const generoSelecionado = generoDropdown.value.toLowerCase(); // Adicionado
+        const generoSelecionado = generoDropdown.value.toLowerCase();
         if (query !== "") {
             filterMovies(query);
             changePage(1);
             hidePageButtons(); 
-        } else if (generoSelecionado !== "") { // Adicionado
+        } else {
             filterMoviesByGenero(generoSelecionado);
             changePage(1);
             hidePageButtons(); 
-        } else {
-            restoreOriginalMovies();
-            changePage(1);
-            showPageButtons(); 
         }
     }
+    
+    function displayNoResultsMessage() {
+        moviesContainer.innerHTML = "";
+        const noResultsMessage = document.createElement("p");
+        noResultsMessage.textContent = "Nenhum resultado encontrado.";
+        noResultsMessage.classList.add("no-results-message", "text-center", "flex","w-screen","pl-12","justify-center","items-center","text-gray-500"); 
+        moviesContainer.appendChild(noResultsMessage);
+    }
+    
     
     function hidePageButtons() {
         const pageButtons = document.querySelectorAll('.join-item.btn');
@@ -126,13 +142,8 @@ document.addEventListener("DOMContentLoaded", function () {
         handleSearch();
     });
 
-    searchInput.addEventListener("blur", function () {
-        if (searchInput.value.trim() === "") {
-            location.reload();
-        }
-    });
     
-    generoDropdown.addEventListener("change", function () { // Adicionado
+    generoDropdown.addEventListener("change", function () { 
         handleSearch();
     });
 });
