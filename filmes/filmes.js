@@ -31,15 +31,13 @@ function changePage(pageNumber) {
     document.getElementById('page-' + pageNumber).classList.add('active');
 }
 
-
-
-// Barra de pesquisa
+// Barra de pesquisa e filtragem por gênero
 document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById("searchInput");
     const searchIcon = document.getElementById("searchIcon");
     const moviesContainer = document.getElementById("moviesContainer");
     const moviesPages = document.querySelectorAll("[class^='page-']");
-    
+    const generoDropdown = document.getElementById("generoDropdown"); // Adicionado
 
     let originalMovies = [];
     let searchResults = [];
@@ -66,6 +64,14 @@ document.addEventListener("DOMContentLoaded", function () {
         displaySearchResults();
     }
 
+    function filterMoviesByGenero(genero) { // Adicionado
+        searchResults = originalMovies.filter(movie => {
+            const movieGenero = movie.alt.toLowerCase().split('-')[0].trim(); // Obtém o gênero do filme
+            return movieGenero === genero;
+        });
+        displaySearchResults();
+    }
+
     function displaySearchResults() {
         moviesContainer.innerHTML = "";
         if (searchResults.length === 0) {
@@ -82,8 +88,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function handleSearch() {
         const query = searchInput.value.trim();
+        const generoSelecionado = generoDropdown.value.toLowerCase(); // Adicionado
         if (query !== "") {
             filterMovies(query);
+            changePage(1);
+            hidePageButtons(); 
+        } else if (generoSelecionado !== "") { // Adicionado
+            filterMoviesByGenero(generoSelecionado);
             changePage(1);
             hidePageButtons(); 
         } else {
@@ -106,7 +117,6 @@ document.addEventListener("DOMContentLoaded", function () {
             button.classList.remove('hidden');
         });
     }
-    
 
     searchIcon.addEventListener("click", function () {
         handleSearch();
@@ -121,23 +131,8 @@ document.addEventListener("DOMContentLoaded", function () {
             location.reload();
         }
     });
-});
-
-    document.addEventListener("DOMContentLoaded", function() {
-        const genreSelect = document.getElementById('genreSelect');
-        const moviesContainer = document.getElementById('moviesContainer');
-        const allMovies = moviesContainer.querySelectorAll('div');
-
-        genreSelect.addEventListener('change', function() {
-            const selectedGenre = genreSelect.value;
-            allMovies.forEach(function(movie) {
-                if (selectedGenre === 'Todos') {
-                    movie.style.display = 'block';
-                } else if (movie.classList.contains(selectedGenre.toLowerCase())) {
-                    movie.style.display = 'block';
-                } else {
-                    movie.style.display = 'none';
-                }
-            });
-        });
+    
+    generoDropdown.addEventListener("change", function () { // Adicionado
+        handleSearch();
     });
+});
