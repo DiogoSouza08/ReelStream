@@ -1,4 +1,6 @@
-// Paginação
+let selectedGenre = "todos";
+let selectedGenreText = "Todos os gêneros";
+
 function changeActive(buttonNumber) {
     var buttons = document.querySelectorAll('.join-item');
     buttons.forEach(function(button) {
@@ -31,12 +33,10 @@ function changePage(pageNumber) {
     document.getElementById('page-' + pageNumber).classList.add('active');
 }
 
-// Barra de pesquisa e filtragem por gênero
 document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById("searchInput");
     const searchIcon = document.getElementById("searchIcon");
     const moviesContainer = document.getElementById("moviesContainer");
-    const moviesPages = document.querySelectorAll("[class^='page-']");
     const generoDropdown = document.getElementById("generoDropdown");
 
     let originalMovies = [];
@@ -51,33 +51,31 @@ document.addEventListener("DOMContentLoaded", function () {
     function restoreOriginalMovies() {
         moviesContainer.innerHTML = "";
         originalMovies.forEach(movie => {
-            const moviePage = movie.closest('.movie-page'); // Encontrar a página pai do filme
-            const pageNumber = moviePage.dataset.page; // Obter o número da página do atributo data-page
-            if (pageNumber === currentPage) { // Verificar se é a página atual
+            const moviePage = movie.closest('.movie-page');
+            const pageNumber = moviePage.dataset.page;
+            if (pageNumber === currentPage) {
                 moviesContainer.appendChild(movie.parentNode);
             }
         });
-
-        
     }
-    
 
     function filterMovies(query) {
         const lowerCaseQuery = query.toLowerCase();
         searchResults = originalMovies.filter(movie => {
             const movieName = movie.alt.toLowerCase();
-            return movieName.includes(lowerCaseQuery);
+            const movieGenre = movie.alt.toLowerCase().split('-')[0].trim();
+            return movieName.includes(lowerCaseQuery) && (selectedGenre === "todos" || movieGenre === selectedGenre);
         });
         displaySearchResults();
     }
 
     function filterMoviesByGenero(genero) {
         if (genero === "todos") {
-            location.reload(); // Recarrega a página se "todos" for selecionado
+            location.reload();
             return;
         }
         searchResults = originalMovies.filter(movie => {
-            const movieGenero = movie.alt.toLowerCase().split('-')[0].trim(); // Obtém o gênero do filme
+            const movieGenero = movie.alt.toLowerCase().split('-')[0].trim();
             return movieGenero === genero;
         });
         displaySearchResults();
@@ -88,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (searchResults.length === 0) {
             const noResultsMessage = document.createElement("p");
             noResultsMessage.textContent = "Nenhum resultado encontrado.";
-            noResultsMessage.classList.add("no-results-message", "text-center", "flex","w-screen","pl-12","justify-center","items-center","text-gray-500"); 
+            noResultsMessage.classList.add("no-results-message", "text-center", "flex", "w-screen", "pl-12", "justify-center", "items-center", "text-gray-500");
             moviesContainer.appendChild(noResultsMessage);
         } else {
             searchResults.forEach(movie => {
@@ -100,33 +98,28 @@ document.addEventListener("DOMContentLoaded", function () {
     function handleSearch() {
         const query = searchInput.value.trim();
         const generoSelecionado = generoDropdown.value.toLowerCase();
+        selectedGenre = generoSelecionado;
+
         if (query !== "") {
             filterMovies(query);
             changePage(1);
-            hidePageButtons(); 
+            hidePageButtons();
         } else {
             filterMoviesByGenero(generoSelecionado);
             changePage(1);
-            hidePageButtons(); 
+            hidePageButtons();
         }
+
+        searchInput.focus();
     }
-    
-    function displayNoResultsMessage() {
-        moviesContainer.innerHTML = "";
-        const noResultsMessage = document.createElement("p");
-        noResultsMessage.textContent = "Nenhum resultado encontrado.";
-        noResultsMessage.classList.add("no-results-message", "text-center", "flex","w-screen","pl-12","justify-center","items-center","text-gray-500"); 
-        moviesContainer.appendChild(noResultsMessage);
-    }
-    
-    
+
     function hidePageButtons() {
         const pageButtons = document.querySelectorAll('.join-item.btn');
         pageButtons.forEach(function(button) {
             button.classList.add('hidden');
         });
     }
-    
+
     function showPageButtons() {
         const pageButtons = document.querySelectorAll('.join-item.btn');
         pageButtons.forEach(function(button) {
@@ -142,8 +135,21 @@ document.addEventListener("DOMContentLoaded", function () {
         handleSearch();
     });
 
-    
     generoDropdown.addEventListener("change", function () { 
         handleSearch();
+        updateGenreSearchText();
     });
+
+    function updateGenreSearchText() {
+        const selectedGenreOption = generoDropdown.options[generoDropdown.selectedIndex].text;
+        if (selectedGenreOption.toLowerCase() === "todos") {
+            searchInput.placeholder = "Buscar filmes";
+        } else {
+            selectedGenreText = selectedGenreOption;
+            searchInput.placeholder = "Buscar filmes de " + selectedGenreText;
+        }
+    }
+
+    updateGenreSearchText();
+    searchInput.focus();
 });
