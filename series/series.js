@@ -12,8 +12,8 @@ function changeActive(buttonNumber) {
 }
 
 function changePage(pageNumber) {
-    var moviePages = document.querySelectorAll('[class^="page-"]');
-    moviePages.forEach(function(page) {
+    var seriesPages = document.querySelectorAll('[class^="page-"]');
+    seriesPages.forEach(function(page) {
         page.style.display = 'none';
     });
 
@@ -49,21 +49,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function restoreOriginalseries() {
         seriesContainer.innerHTML = "";
-        originalseries.forEach(movie => {
-            const moviePage = movie.closest('.movie-page');
-            const pageNumber = moviePage.dataset.page;
+        originalseries.forEach(series => {
+            const seriesPage = series.closest('.series-page');
+            const pageNumber = seriesPage.dataset.page;
             if (pageNumber === currentPage) {
-                seriesContainer.appendChild(movie.parentNode);
+                seriesContainer.appendChild(series.parentNode);
             }
         });
     }
 
     function filterseries(query) {
         const lowerCaseQuery = query.toLowerCase();
-        searchResults = originalseries.filter(movie => {
-            const movieName = movie.alt.toLowerCase();
-            const movieGenre = movie.alt.toLowerCase().split('-')[0].trim();
-            return movieName.includes(lowerCaseQuery) && (selectedGenre === "todos" || movieGenre === selectedGenre);
+        searchResults = originalseries.filter(series => {
+            const seriesName = series.alt.toLowerCase();
+            const seriesGenre = series.alt.toLowerCase().split('-')[0].trim();
+            return seriesName.includes(lowerCaseQuery) && (selectedGenre === "todos" || seriesGenre === selectedGenre);
         });
         displaySearchResults();
     }
@@ -73,9 +73,9 @@ document.addEventListener("DOMContentLoaded", function () {
             location.reload();
             return;
         }
-        searchResults = originalseries.filter(movie => {
-            const movieGenero = movie.alt.toLowerCase().split('-')[0].trim();
-            return movieGenero === genero;
+        searchResults = originalseries.filter(series => {
+            const seriesGenero = series.alt.toLowerCase().split('-')[0].trim();
+            return seriesGenero === genero;
         });
         displaySearchResults();
     }
@@ -88,8 +88,8 @@ document.addEventListener("DOMContentLoaded", function () {
             noResultsMessage.classList.add("no-results-message", "text-center", "flex", "w-screen", "pl-12", "justify-center", "items-center", "text-gray-500");
             seriesContainer.appendChild(noResultsMessage);
         } else {
-            searchResults.forEach(movie => {
-                seriesContainer.appendChild(movie.parentNode);
+            searchResults.forEach(series => {
+                seriesContainer.appendChild(series.parentNode);
             });
         }
     }
