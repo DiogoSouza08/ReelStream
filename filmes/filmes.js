@@ -20,7 +20,6 @@ function changePage(pageNumber) {
     var currentPage = document.querySelector('.page-' + pageNumber);
     currentPage.style.display = 'grid';
 
-
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
@@ -110,7 +109,9 @@ document.addEventListener("DOMContentLoaded", function () {
             hidePageButtons();
         }
 
-        searchInput.focus();
+        if (window.innerWidth > 992) {
+            searchInput.focus();
+        }
     }
 
     function hidePageButtons() {
@@ -151,5 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     updateGenreSearchText();
-    searchInput.focus();
+    if (window.innerWidth > 992) {
+        searchInput.focus();
+    }
 });
