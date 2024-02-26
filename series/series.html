@@ -83,13 +83,15 @@
         <div class="bg-gray-600  items-center sm:justify-start sm:flex-row flex-col justify-between text-sm w-full flex gap-3 px-8 py-1.5">
             <div class="flex items-center gap-2">
                 <p class="text-white">Selecione um gênero:</p>
-                <select id="genreSelect" class="select select-bordered text-white font-normal bg-gray-900 w-auto max-w-xs">
-                    <option>Todos</option>
-                    <option>Ação</option>
-                    <option>Aventura</option>
-                    <option>Romance</option>
-                    <option>Terror</option>
-                    <option>Aventura</option>
+                <select id="generoDropdown" onchange="filtrarPorGenero()" class="select select-bordered text-white font-normal bg-gray-900 w-auto max-w-xs">
+                    <option><a href="#">Todos</a></option>
+                    <option value="ação">Ação</option>
+                    <option value="terror">Terror</option>
+                    <option value="romance">Romance</option>
+                    <option value="comédia">Comédia</option>
+                    <option value="Ficção">Ficção</option>
+                    <option value="Thriller">Thriller</option>
+                    <option value="drama">Drama</option>
                 </select>
             </div>
             <div class="search-box w-auto bg-white my-1 rounded-lg">
@@ -136,58 +138,58 @@
         </div>
     
         <div id="seriesContainer" class="page-1 bg-gray-900 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-4 px-8 py-6 place-items-center">            
-            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- a casa do dragão.jpg" alt="A Casa do Dragao"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- black list.jpg" alt="Black List"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- bom dia veronica.jpg" alt="Bom Dia, Veronica"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-loki.jpg" alt="loki"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- lupin.jpg" alt="Lupin"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- shadowhunters.jpg" alt="Shadowhunters"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- the boys.jpg" alt="The Boys"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- the choosen.jpg" alt="The Chosen"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- bridgerton.jpg" alt="Bridgerton"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- a casa do dragão.jpg" alt="drama - A Casa do Dragao"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- black list.jpg" alt="Thriller - Black List"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- bom dia veronica.jpg" alt="Thriller - Bom Dia, Veronica"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-loki.jpg" alt="ação - loki"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- lupin.jpg" alt="Thriller - Lupin"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- shadowhunters.jpg" alt="drama - Shadowhunters"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- the boys.jpg" alt="drama - The Boys"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- the choosen.jpg" alt="drama - The Chosen"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- bridgerton.jpg" alt="romance - Bridgerton"></div>
             <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- griselda.jpg" alt="Griselda"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- halo.jpg" alt="Halo"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- house md.jpg" alt="House MD"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- the flash.jpg" alt="The Flash"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- the witcher.jpg" alt="The Witcher"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- yellowstone.jpg" alt="Yellowstone"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- you.jpg" alt="You"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-wanda vision.jpg" alt="Wanda Vision"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-vis a vis.jpg" alt="Vis a Vis"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card - american horror story.jpg" alt="american horror story"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card - evil.jpg" alt="evil"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card - a maldição da mansão bly.jpg" alt="a maldição da mansão bly"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card - true blood.jpg" alt=" true blood"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-o silo.jpg" alt="o silo"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card -salem.jpg" alt="salem"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- halo.jpg" alt="Ficção - Halo"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- house md.jpg" alt="drama - House MD"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- the flash.jpg" alt="Ficção - The Flash"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- the witcher.jpg" alt="drama - The Witcher"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- yellowstone.jpg" alt="Thriller - Yellowstone"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- you.jpg" alt="Thriller -  You"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-wanda vision.jpg" alt="ação - Wanda Vision"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-vis a vis.jpg" alt="drama - Vis a Vis"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card - american horror story.jpg" alt="terror - american horror story"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card - evil.jpg" alt="terror - evil"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card - a maldição da mansão bly.jpg" alt="terror - a maldição da mansão bly"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card - true blood.jpg" alt="drama - true blood"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-o silo.jpg" alt="drama - o silo"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card -salem.jpg" alt="drama - salem"></div>
         </div>
         
 
         <div  class="page-2  grid-cols-2 bg-gray-900 md:grid-cols-4  xl:grid-cols-6 gap-4 px-8 py-6 place-items-center hidden">
-            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-teen wolf.jpg" alt="teen wolf"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-sweet tooth.jpg" alt="sweet tooth"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-round6.jpg" alt="round6"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-riverdale.jpg" alt="riverdale"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-elite.jpg" alt="elite"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-friends.jpg" alt="friends"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-GOT.jpg" alt="GOT - Game of thrones"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card -o culto secreto.jpg" alt="o culto secreto"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card - diario de vampiro.jpg" alt="diario de vampiro"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card- lucifer.jpg" alt="lucifer"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-stranger things.jpg" alt="stranger things"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-quem matou sara.jpg" alt="quem matou sara"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-breaking bad.jpg" alt="breaking bad"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-perifericos.jpg" alt="perifericos"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card- tulsa king.jpg" alt="tulsa king"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-moon knight.jpg" alt="moon knight: cavaleiro da lua"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-1899.jpg" alt=""></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-a cidade é nossa.jpg" alt=""></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-a lista terminal.jpg" alt=""></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-a vizinha da mulher na janela.jpg" alt=""></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-anatomy of scandal.jpg" alt="anatomy of scandal"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-black bird.jpg" alt="black bird"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-breeders.jpg" alt="breeders"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-clark.jpg" alt="clark"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-teen wolf.jpg" alt="drama - teen wolf"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-sweet tooth.jpg" alt="drama - sweet tooth"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-round6.jpg" alt="Thriller - round6"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-riverdale.jpg" alt="drama - riverdale"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-elite.jpg" alt="drama -  elite"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-friends.jpg" alt="comédia - friends"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/imagesTop10daSemana/card-GOT.jpg" alt="drama - GOT - Game of thrones"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Terror/card -o culto secreto.jpg" alt="Thriller - o culto secreto"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card - diario de vampiro.jpg" alt="drama - diario de vampiro"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card- lucifer.jpg" alt="drama - lucifer"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-stranger things.jpg" alt="terror - stranger things"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-quem matou sara.jpg" alt="Thriller quem matou sara"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../src/Populares/card-breaking bad.jpg" alt="drama - breaking bad"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-perifericos.jpg" alt="ficção - perifericos"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card- tulsa king.jpg" alt="ação - tulsa king"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-moon knight.jpg" alt="ação - moon knight: cavaleiro da lua"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-1899.jpg" alt="terror - 1899"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-a cidade é nossa.jpg" alt="drama - a cidade e nossa"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-a lista terminal.jpg" alt="Thriller - a lista terminal"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-a vizinha da mulher na janela.jpg" alt="Thriller - a vizinha da mulher na janela"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-anatomy of scandal.jpg" alt="Thriller - anatomy of scandal"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-black bird.jpg" alt="drama - black bird"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-breeders.jpg" alt="comédia - breeders"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-clark.jpg" alt="drama - clark"></div>
     
 
    
@@ -198,102 +200,102 @@
    
         <div class="page-3 grid-cols-2 bg-gray-900 md:grid-cols-4 xl:grid-cols-6 gap-4 px-8 py-6 place-items-center hidden">
             <div>
-                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-desejo sombrio.jpg" alt="Desejo Sombrio">
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-desejo sombrio.jpg" alt="Thriller - Desejo Sombrio">
             </div>
             <div>
-                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-dracula.jpg" alt="Dracula">
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-dracula.jpg" alt="terror - Dracula">
             </div>
             <div>
-                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-dahmer.jpg" alt="Dahmer">
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-dahmer.jpg" alt="drama - Dahmer">
             </div>
             <div>
-                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-emily in paris.jpg" alt="Emily in Paris">
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-emily in paris.jpg" alt="romance - Emily in Paris">
             </div>
             <div>
-                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-for life.jpg" alt="For Life">
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-for life.jpg" alt="drama - For Life">
             </div>
             <div>
-                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-freud.jpg" alt="Freud">
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-freud.jpg" alt="Thriller - Freud">
             </div>
             <div>
-                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-iludida.jpg" alt="Iludida">
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-iludida.jpg" alt="Thriller - Iludida">
             </div>
             <div>
-                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-invasor de sonhos.jpg" alt="Invasor de Sonhos">
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-invasor de sonhos.jpg" alt="drama - Invasor de Sonhos">
             </div>
             <div>
-                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-jogo perigoso.jpg" alt="Jogo Perigoso">
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-jogo perigoso.jpg" alt="ação - Jogo Perigoso">
             </div>
             <div>
-                <img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- impuros.jpg" alt="Impuros">
+                <img class="rounded-lg cursor-pointer" src="../src/SeriesParaMaratonar/card- impuros.jpg" alt="ação - Impuros">
             </div>
             <div>
-                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-manifest.jpg" alt="Manifest">
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-manifest.jpg" alt="Thriller -  Manifest">
             </div>
             <div>
-                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-o clube da meia noite.jpg" alt="O Clube da Meia Noite">
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-o clube da meia noite.jpg" alt="terror - O Clube da Meia Noite">
             </div>
             <div>
-                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-o turista.jpg" alt="O Turista">
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-o turista.jpg" alt="Thriller -  O Turista">
             </div>
             <div>
-                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-outer range.jpg" alt="Outer Range">
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-outer range.jpg" alt="ficção -  Outer Range">
             </div>
             <div>
-                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-reacher.jpg" alt="Reacher">
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-reacher.jpg" alt="ação - Reacher">
             </div>
             <div>
-                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-red rose.jpg" alt="Red Rose">
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-red rose.jpg" alt="terror - Red Rose">
             </div>
             <div>
-                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-sandman.jpg" alt="Sandman">
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-sandman.jpg" alt="terror - Sandman">
             </div>
             <div>
-                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-skymed.jpg" alt="Skymed">
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-skymed.jpg" alt="romance - Skymed">
             </div>
             <div>
-                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-stargirl.jpg" alt="Stargirl">
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-stargirl.jpg" alt="ação - Stargirl">
             </div>
             <div>
-                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-suspicion.jpg" alt="Suspicion">
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-suspicion.jpg" alt="Thriller - Suspicion">
             </div>
             <div>
-                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-trying.jpg" alt="Trying">
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-trying.jpg" alt="comédia - Trying">
             </div>
             <div>
-                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-winchesters.jpg" alt="The Winchesters">
+                <img class="rounded-lg cursor-pointer" src="../series/series diversas/card-winchesters.jpg" alt="terror - The Winchesters">
             </div>
             
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-legados.jpg" alt="legados legacy"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-the rookie.jpg" alt="the rookie"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-legados.jpg" alt="terror - legados legacy"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-the rookie.jpg" alt="ação - the rookie"></div>
         </div>
         
    
         <div class="page-4 bg-gray-900 grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-4 px-8 py-6 place-items-center hidden">
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-titas.jpg" alt="titans"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-cobra kai.jpg" alt="cobra kai"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-perdidos no espaço.jpg" alt="perdidos no espaço"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-succession.jpg" alt="succession"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-jack ryan.jpg" alt="jack ryan"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-mr-inbetween.jpg" alt="mr inbetween"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-the gifted.jpg" alt="the gifted"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-mindhunter.jpg" alt="mind hunter"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-punho de ferro.jpg" alt="punho de ferro"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-ozark.jpg" alt="ozark"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-gossip girl.jpg" alt="gossip girl"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-ghost wars.jpg" alt="ghost wars guerra de fantasmas"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-the deuce.jpg" alt="the deuce"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-lore.jpg" alt="lore"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-agentes da shield.jpg" alt="agentes da shield"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-under the dome.jpg" alt="under the dome"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-originals.jpg" alt="the originals"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-motel bates.jpg" alt="motel bates"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-top boy.jpg" alt="top boy"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-brooklyn nine-nine.jpg" alt="brooklyn nine nine"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-black mirror.jpg" alt="black mirror"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-the killing.jpg" alt="the killing - alem de um crime"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-suits.jpg" alt="suits"></div>
-            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-seal team.jpg" alt="seal team"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-titas.jpg" alt="ação - titans"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-cobra kai.jpg" alt="ação - cobra kai"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-perdidos no espaço.jpg" alt="ficção - perdidos no espaço"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-succession.jpg" alt="comédia - succession"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-jack ryan.jpg" alt="Thriller - jack ryan"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-mr-inbetween.jpg" alt="comédia - mr inbetween"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-the gifted.jpg" alt="ficção - the gifted"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-mindhunter.jpg" alt="Thriller - mind hunter"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-punho de ferro.jpg" alt="ação - punho de ferro"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-ozark.jpg" alt="Thriller - ozark"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-gossip girl.jpg" alt="comédia - gossip girl"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-ghost wars.jpg" alt="terror - ghost wars guerra de fantasmas"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-the deuce.jpg" alt="ficção - the deuce"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-lore.jpg" alt="terror - lore"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-agentes da shield.jpg" alt="ação - agentes da shield"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-under the dome.jpg" alt="ficção - under the dome"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-originals.jpg" alt="terror - the originals"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-motel bates.jpg" alt="terror - motel bates"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-top boy.jpg" alt="ação - top boy"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-brooklyn nine-nine.jpg" alt="comédia - brooklyn nine nine"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-black mirror.jpg" alt="ficção - black mirror"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-the killing.jpg" alt="Thriller - the killing - alem de um crime"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-suits.jpg" alt="Thriller - suits"></div>
+            <div><img class="rounded-lg cursor-pointer" src="../series/series diversas/card-seal team.jpg" alt="ação - seal team"></div>
         </div>
         
    
