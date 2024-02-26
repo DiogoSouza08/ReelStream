@@ -1,4 +1,6 @@
-// Paginação
+let selectedGenre = "todos";
+let selectedGenreText = "Todos os gêneros";
+
 function changeActive(buttonNumber) {
     var buttons = document.querySelectorAll('.join-item');
     buttons.forEach(function(button) {
@@ -18,7 +20,6 @@ function changePage(pageNumber) {
     var currentPage = document.querySelector('.page-' + pageNumber);
     currentPage.style.display = 'grid';
 
-    // Adiciona a rolagem para o topo
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
@@ -31,13 +32,11 @@ function changePage(pageNumber) {
     document.getElementById('page-' + pageNumber).classList.add('active');
 }
 
-// Barra de pesquisa
 document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById("searchInput");
     const searchIcon = document.getElementById("searchIcon");
     const seriesContainer = document.getElementById("seriesContainer");
-    const seriesPages = document.querySelectorAll("[class^='page-']");
-    
+    const generoDropdown = document.getElementById("generoDropdown");
 
     let originalseries = [];
     let searchResults = [];
@@ -51,7 +50,11 @@ document.addEventListener("DOMContentLoaded", function () {
     function restoreOriginalseries() {
         seriesContainer.innerHTML = "";
         originalseries.forEach(movie => {
-            seriesContainer.appendChild(movie.parentNode);
+            const moviePage = movie.closest('.movie-page');
+            const pageNumber = moviePage.dataset.page;
+            if (pageNumber === currentPage) {
+                seriesContainer.appendChild(movie.parentNode);
+            }
         });
     }
 
@@ -59,7 +62,20 @@ document.addEventListener("DOMContentLoaded", function () {
         const lowerCaseQuery = query.toLowerCase();
         searchResults = originalseries.filter(movie => {
             const movieName = movie.alt.toLowerCase();
-            return movieName.includes(lowerCaseQuery);
+            const movieGenre = movie.alt.toLowerCase().split('-')[0].trim();
+            return movieName.includes(lowerCaseQuery) && (selectedGenre === "todos" || movieGenre === selectedGenre);
+        });
+        displaySearchResults();
+    }
+
+    function filterseriesByGenero(genero) {
+        if (genero === "todos") {
+            location.reload();
+            return;
+        }
+        searchResults = originalseries.filter(movie => {
+            const movieGenero = movie.alt.toLowerCase().split('-')[0].trim();
+            return movieGenero === genero;
         });
         displaySearchResults();
     }
@@ -69,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (searchResults.length === 0) {
             const noResultsMessage = document.createElement("p");
             noResultsMessage.textContent = "Nenhum resultado encontrado.";
-            noResultsMessage.classList.add("no-results-message", "text-center", "flex","w-screen","pl-12","justify-center","items-center","text-gray-500"); 
+            noResultsMessage.classList.add("no-results-message", "text-center", "flex", "w-screen", "pl-12", "justify-center", "items-center", "text-gray-500");
             seriesContainer.appendChild(noResultsMessage);
         } else {
             searchResults.forEach(movie => {
@@ -78,35 +94,39 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    
-
     function handleSearch() {
         const query = searchInput.value.trim();
+        const generoSelecionado = generoDropdown.value.toLowerCase();
+        selectedGenre = generoSelecionado;
+
         if (query !== "") {
             filterseries(query);
             changePage(1);
-            hidePageButtons(); 
+            hidePageButtons();
         } else {
-            restoreOriginalseries();
+            filterseriesByGenero(generoSelecionado);
             changePage(1);
-            showPageButtons(); 
+            hidePageButtons();
+        }
+
+        if (window.innerWidth > 992) {
+            searchInput.focus();
         }
     }
-    
+
     function hidePageButtons() {
         const pageButtons = document.querySelectorAll('.join-item.btn');
         pageButtons.forEach(function(button) {
             button.classList.add('hidden');
         });
     }
-    
+
     function showPageButtons() {
         const pageButtons = document.querySelectorAll('.join-item.btn');
         pageButtons.forEach(function(button) {
             button.classList.remove('hidden');
         });
     }
-    
 
     searchIcon.addEventListener("click", function () {
         handleSearch();
@@ -116,9 +136,23 @@ document.addEventListener("DOMContentLoaded", function () {
         handleSearch();
     });
 
-    searchInput.addEventListener("blur", function () {
-        if (searchInput.value.trim() === "") {
-            location.reload();
-        }
+    generoDropdown.addEventListener("change", function () { 
+        handleSearch();
+        updateGenreSearchText();
     });
+
+    function updateGenreSearchText() {
+        const selectedGenreOption = generoDropdown.options[generoDropdown.selectedIndex].text;
+        if (selectedGenreOption.toLowerCase() === "todos") {
+            searchInput.placeholder = "Buscar séries";
+        } else {
+            selectedGenreText = selectedGenreOption;
+            searchInput.placeholder = "Buscar séries de " + selectedGenreText;
+        }
+    }
+
+    updateGenreSearchText();
+    if (window.innerWidth > 992) {
+        searchInput.focus();
+    }
 });
