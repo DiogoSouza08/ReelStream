@@ -141,15 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
         updateGenreSearchText();
     });
 
-    function updateGenreSearchText() {
-        const selectedGenreOption = generoDropdown.options[generoDropdown.selectedIndex].text;
-        if (selectedGenreOption.toLowerCase() === "todos") {
-            searchInput.placeholder = "Buscar séries";
-        } else {
-            selectedGenreText = selectedGenreOption;
-            searchInput.placeholder = "Buscar séries de " + selectedGenreText;
-        }
-    }
+ 
 
     updateGenreSearchText();
     if (window.innerWidth > 992) {
