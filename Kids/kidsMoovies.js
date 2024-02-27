@@ -1,4 +1,6 @@
-// Paginação
+let selectedGenre = "todos";
+let selectedGenreText = "Todos os gêneros";
+
 function changeActive(buttonNumber) {
     var buttons = document.querySelectorAll('.join-item');
     buttons.forEach(function(button) {
@@ -10,15 +12,14 @@ function changeActive(buttonNumber) {
 }
 
 function changePage(pageNumber) {
-    var moviePages = document.querySelectorAll('[class^="page-"]');
-    moviePages.forEach(function(page) {
+    var kidsPages = document.querySelectorAll('[class^="page-"]');
+    kidsPages.forEach(function(page) {
         page.style.display = 'none';
     });
 
     var currentPage = document.querySelector('.page-' + pageNumber);
     currentPage.style.display = 'grid';
 
-    // Adiciona a rolagem para o topo
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
@@ -31,82 +32,101 @@ function changePage(pageNumber) {
     document.getElementById('page-' + pageNumber).classList.add('active');
 }
 
-// Barra de pesquisa
 document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById("searchInput");
     const searchIcon = document.getElementById("searchIcon");
-    const KidsContainer = document.getElementById("KidsContainer");
-    const KidsPages = document.querySelectorAll("[class^='page-']");
-    
+    const kidsContainer = document.getElementById("kidsContainer");
+    const generoDropdown = document.getElementById("generoDropdown");
 
-    let originalKids = [];
+    let originalkids = [];
     let searchResults = [];
 
-    function getOriginalKids() {
-        originalKids = Array.from(document.querySelectorAll(".page-1 img, .page-2 img, .page-3 img, .page-4 img"));
+    function getOriginalkids() {
+        originalkids = Array.from(document.querySelectorAll(".page-1 img, .page-2 img, .page-3 img, .page-4 img"));
     }
 
-    getOriginalKids();
+    getOriginalkids();
 
-    function restoreOriginalKids() {
-        KidsContainer.innerHTML = "";
-        originalKids.forEach(movie => {
-            KidsContainer.appendChild(movie.parentNode);
+    function restoreOriginalkids() {
+        kidsContainer.innerHTML = "";
+        originalkids.forEach(kids => {
+            const kidsPage = kids.closest('.kids-page');
+            const pageNumber = kidsPage.dataset.page;
+            if (pageNumber === currentPage) {
+                kidsContainer.appendChild(kids.parentNode);
+            }
         });
     }
 
-    function filterKids(query) {
+    function filterkids(query) {
         const lowerCaseQuery = query.toLowerCase();
-        searchResults = originalKids.filter(movie => {
-            const movieName = movie.alt.toLowerCase();
-            return movieName.includes(lowerCaseQuery);
+        searchResults = originalkids.filter(kids => {
+            const kidsName = kids.alt.toLowerCase();
+            const kidsGenre = kids.alt.toLowerCase().split('-')[0].trim();
+            return kidsName.includes(lowerCaseQuery) && (selectedGenre === "todos" || kidsGenre === selectedGenre);
+        });
+        displaySearchResults();
+    }
+
+    function filterkidsByGenero(genero) {
+        if (genero === "todos") {
+            location.reload();
+            return;
+        }
+        searchResults = originalkids.filter(kids => {
+            const kidsGenero = kids.alt.toLowerCase().split('-')[0].trim();
+            return kidsGenero === genero;
         });
         displaySearchResults();
     }
 
     function displaySearchResults() {
-        KidsContainer.innerHTML = "";
+        kidsContainer.innerHTML = "";
         if (searchResults.length === 0) {
             const noResultsMessage = document.createElement("p");
             noResultsMessage.textContent = "Nenhum resultado encontrado.";
-            noResultsMessage.classList.add("no-results-message", "text-center", "flex","w-screen","pl-12","justify-center","items-center","text-gray-500"); 
-            KidsContainer.appendChild(noResultsMessage);
+            noResultsMessage.classList.add("no-results-message", "text-center", "flex", "w-screen", "pl-12", "justify-center", "items-center", "text-gray-500");
+            kidsContainer.appendChild(noResultsMessage);
         } else {
-            searchResults.forEach(movie => {
-                KidsContainer.appendChild(movie.parentNode);
+            searchResults.forEach(kids => {
+                kidsContainer.appendChild(kids.parentNode);
             });
         }
     }
 
-    
-
     function handleSearch() {
         const query = searchInput.value.trim();
+        const generoSelecionado = generoDropdown.value.toLowerCase();
+        selectedGenre = generoSelecionado;
+
         if (query !== "") {
-            filterKids(query);
+            filterkids(query);
             changePage(1);
-            hidePageButtons(); 
+            hidePageButtons();
         } else {
-            restoreOriginalKids();
+            filterkidsByGenero(generoSelecionado);
             changePage(1);
-            showPageButtons(); 
+            hidePageButtons();
+        }
+
+        if (window.innerWidth > 992) {
+            searchInput.focus();
         }
     }
-    
+
     function hidePageButtons() {
         const pageButtons = document.querySelectorAll('.join-item.btn');
         pageButtons.forEach(function(button) {
             button.classList.add('hidden');
         });
     }
-    
+
     function showPageButtons() {
         const pageButtons = document.querySelectorAll('.join-item.btn');
         pageButtons.forEach(function(button) {
             button.classList.remove('hidden');
         });
     }
-    
 
     searchIcon.addEventListener("click", function () {
         handleSearch();
@@ -116,9 +136,23 @@ document.addEventListener("DOMContentLoaded", function () {
         handleSearch();
     });
 
-    searchInput.addEventListener("blur", function () {
-        if (searchInput.value.trim() === "") {
-            location.reload();
-        }
+    generoDropdown.addEventListener("change", function () { 
+        handleSearch();
+        updateGenreSearchText();
     });
+
+    function updateGenreSearchText() {
+        const selectedGenreOption = generoDropdown.options[generoDropdown.selectedIndex].text;
+        if (selectedGenreOption.toLowerCase() === "todos") {
+            searchInput.placeholder = "Buscar séries";
+        } else {
+            selectedGenreText = selectedGenreOption;
+            searchInput.placeholder = "Buscar séries de " + selectedGenreText;
+        }
+    }
+
+    updateGenreSearchText();
+    if (window.innerWidth > 992) {
+        searchInput.focus();
+    }
 });
