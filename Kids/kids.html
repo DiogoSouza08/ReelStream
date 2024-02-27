@@ -80,8 +80,20 @@
     </header>
 
     <main>
-        <div class="bg-gray-600  items-center sm:justify-start sm:flex-row flex-col justify-end text-sm w-full flex gap-3 px-8 py-1.5">
-            
+        <div class="bg-gray-600  items-center sm:justify-start sm:flex-row flex-col justify-between text-sm w-full flex gap-3 px-8 py-1.5">
+            <div class="flex items-center gap-2">
+                <p class="text-white">Selecione um gênero:</p>
+                <select id="generoDropdown" onchange="filtrarPorGenero()" class="select select-bordered text-white font-normal bg-gray-900 w-auto max-w-xs">
+                    <option><a href="#">Todos</a></option>
+                    <option value="ação">Ação</option>
+                    <option value="terror">Terror</option>
+                    <option value="romance">Romance</option>
+                    <option value="comédia">Comédia</option>
+                    <option value="Ficção">Ficção</option>
+                    <option value="Thriller">Thriller</option>
+                    <option value="drama">Drama</option>
+                </select>
+            </div>
             <div class="search-box w-auto bg-white my-1 rounded-lg">
                 <div class="container flex items-center px-2 ">
                     <input type="text" id="searchInput" placeholder="Buscar filmes" class="flex-grow h-12 border-none text-lg text-gray-900 focus:ring-0">
@@ -99,7 +111,7 @@
             <div class="inset-0 z-50"></div>
             <div class="fixed inset-y-0 transition-transform duration-500 transform -translate-x-full z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10" id="Menu">
                 <div class="flex items-center justify-between text-center">
-                    <a href="../index.html" class="-m-1.5 p-1.5">
+                    <a href="#" class="-m-1.5 p-1.5">
                         <p class="text-gray-900 font-bold text-xl">Reel<span class="text-indigo-500">Stream</span></p>
                     </a>
                     <button id="CloseMenu" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-900">
@@ -114,7 +126,7 @@
                             <a href="../index.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Inicio</a>
                             <a href="../filmes/filmes.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Filmes</a>
                             <a href="../series/series.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Series</a>
-                            <a href="../kids diversos/kids.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Kids</a>
+                            <a href="../Kids/kids.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Kids</a>
                         </div>
                         <div class="py-6 flex justify-around items-start flex-row mt-24">
                             <a href="../Login/login.html" class="-mx-3 block rounded-lg  px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in &rarr;</a>
@@ -125,7 +137,7 @@
             </div>
         </div>
     
-        <div id="KidsContainer" class="page-1 bg-gray-900 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-4 px-8 py-6 place-items-center">            
+        <div id="kidsContainer" class="page-1 bg-gray-900 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-4 px-8 py-6 place-items-center">            
             <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-cada um na sua casa.jpg" alt="cada um na sua casa"></div>
             <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-o bom dinossauro.jpg" alt="o bom dinossauro"></div>
             <div><img class="rounded-lg cursor-pointer" src="../src/kids/card - divertidamente.jpg" alt="divertidamente"></div>
@@ -150,7 +162,6 @@
             <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-mosntros SA.jpg" alt="mosntros SA"></div>
             <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-a casa monstro.jpg" alt="a casa monstro"></div>
             <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-forca G.jpg" alt="força G"></div>
-            
         </div>
         
 
@@ -179,7 +190,6 @@
             <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-lorax.jpg" alt="lorax"></div>
             <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-viva a vida e uma festa.jpg" alt="viva a vida e uma festa"></div>
             <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-pets.jpg" alt="pets"></div>
-            
     
 
    
@@ -213,7 +223,6 @@
             <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-kung fu panda 4.jpg" alt="kung fu panda 4"></div>
             <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-orion e o escuro.jpg" alt="orion e o escuro"></div>
             <div><img class="rounded-lg cursor-pointer" src="../Kids/kids diversos/card-garfield fora de casa.jpg" alt="garfield fora de casa"></div>
-
         </div>
         
    
